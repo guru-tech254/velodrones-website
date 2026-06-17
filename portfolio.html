@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View Velodrones' portfolio of drone mapping, LiDAR surveying, and industrial inspection projects.">
+    <title>Portfolio | Velodrones - Aerial Intelligence Projects</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Header (Same as index.html) -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">VELO<span>DRONES</span></a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="index.html#industries">Industries</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1>Our Portfolio</h1>
+            <p>Explore our successful projects across industries</p>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section bg-dark">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="portfolio-filters">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="inspection">Inspections</button>
+                <button class="filter-btn" data-filter="mapping">Mapping</button>
+                <button class="filter-btn" data-filter="lidar">LiDAR</button>
+                <button class="filter-btn" data-filter="surveillance">Surveillance</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="grid-3" id="portfolio-grid">
+                <!-- Projects will be loaded here by portfolio.js -->
+                <div class="text-center" style="grid-column: 1/-1; padding: 3rem;">
+                    <div class="loading"></div>
+                    <p style="margin-top: 1rem; color: var(--text-muted);">Loading projects...</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section bg-darker text-center">
+        <div class="container">
+            <h2 style="margin-bottom: 1rem;">Have a Project in Mind?</h2>
+            <p class="section-subtitle">Let's discuss how we can help you achieve your goals.</p>
+            <a href="contact.html" class="btn btn-primary">Start Your Project</a>
+        </div>
+    </section>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Velodrones. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.plyr.io/3.7.8/plyr.polyfilled.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/portfolio.js"></script>
+</body>
+</html>
