@@ -1139,3 +1139,61 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
         font-size: 2rem;
     }
 }
+
+
+
+/* --- HERO BUTTONS - HIGH CONTRAST & BRANDED --- */
+
+/* Primary Button: Solid Black with Sky Blue Glow */
+.hero .btn-primary {
+    background-color: #000000 !important; /* Solid Black */
+    color: #ffffff !important;            /* White Text */
+    border: 2px solid #00bfff !important; /* Sky Blue Border */
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6) !important; /* Sky Blue Glow */
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero .btn-primary:hover {
+    background-color: #00bfff !important; /* Sky Blue on hover */
+    color: #000000 !important;            /* Black text on hover */
+    box-shadow: 0 0 30px rgba(0, 191, 255, 1) !important;   /* Brighter glow */
+    transform: translateY(-3px) !important;
+}
+
+/* Secondary Button: Solid White with Black Text */
+.hero .btn-secondary {
+    background-color: #ffffff !important; /* Solid White */
+    color: #000000 !important;            /* Black Text */
+    border: 2px solid #ffffff !important; /* White Border */
+    padding: 1rem 2rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero .btn-secondary:hover {
+    background-color: transparent !important;
+    color: #ffffff !important;            /* White text on hover */
+    border-color: #00bfff !important;     /* Sky Blue border on hover */
+    box-shadow: 0 0 20px rgba(0, 191, 255, 0.6) !important;
+    transform: translateY(-3px) !important;
+}
+
+/* Ensure buttons sit side-by-side nicely */
+.hero-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
