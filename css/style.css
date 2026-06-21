@@ -1258,277 +1258,376 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 
 
 /* ============================================================
-   BRANDED SECTION BACKGROUNDS - Sky Blue / White / Black
+   ULTIMATE VELODRONES BRAND DESIGN SYSTEM
+   Sky Blue (#00BFFF) | Pure White (#FFFFFF) | Deep Black (#0A0A0A)
    ============================================================ */
 
-/* --- LIGHT SECTIONS (Services, Solutions, Industries) --- */
-.section.bg-dark {
-    background: linear-gradient(135deg, 
-        #f0f8ff 0%,           /* Alice Blue - very light */
-        #e6f4ff 50%,          /* Light Sky Blue */
-        #ffffff 100%) !important; /* White */
-    color: #0a0a2e !important;
-    border-top: 3px solid #00bfff;
-    border-bottom: 3px solid #00bfff;
+/* --- GLOBAL SECTION RESETS FOR CLARITY --- */
+.section {
+    padding: 6rem 0 !important; /* More breathing room = premium feel */
+    position: relative;
 }
 
-/* --- DARK SECTIONS (Challenges, ROI, CTA) --- */
-.section.bg-darker {
-    background: linear-gradient(135deg, 
-        #000000 0%,           /* Pure Black */
-        #001a33 40%,          /* Deep Navy */
-        #003d66 70%,          /* Navy Blue */
-        #006699 100%) !important; /* Brand Blue */
-    color: #ffffff !important;
-    border-top: 3px solid #00bfff;
-    border-bottom: 3px solid #00bfff;
+.container {
+    max-width: 1200px !important; /* Tighter container = better readability */
 }
 
-/* --- SECTION TITLES - Branded Colors --- */
-.section.bg-dark .section-title {
-    color: #000000 !important;
-    text-shadow: 0 2px 10px rgba(0, 191, 255, 0.3);
+.section-title {
+    font-size: 2.8rem !important;
+    font-weight: 800 !important;
+    margin-bottom: 1rem !important;
+    letter-spacing: -0.5px !important;
 }
 
-.section.bg-dark .section-subtitle {
-    color: #003d66 !important;
-}
-
-.section.bg-darker .section-title {
-    color: #ffffff !important;
-    text-shadow: 0 2px 15px rgba(0, 191, 255, 0.5);
-}
-
-.section.bg-darker .section-subtitle {
-    color: #87CEEB !important;
+.section-subtitle {
+    font-size: 1.15rem !important;
+    line-height: 1.7 !important;
+    opacity: 0.9 !important;
+    max-width: 700px !important;
+    margin: 0 auto 3rem auto !important;
 }
 
 /* ============================================================
-   CARDS ON LIGHT SECTIONS (Services, Solutions, Industries)
+   LIGHT SECTIONS: SERVICES, SOLUTIONS, INDUSTRIES
+   Clean White Base with Sky Blue Accents
    ============================================================ */
+.section.bg-dark {
+    background: #ffffff !important;
+    border-top: 1px solid rgba(0, 191, 255, 0.1);
+}
+
+.section.bg-dark .section-title {
+    color: #0a0a0a !important;
+}
+
+.section.bg-dark .section-subtitle {
+    color: #4a5568 !important;
+}
+
+/* Premium Card Design - Light Sections */
 .section.bg-dark .service-card,
 .section.bg-dark .industry-card,
 .section.bg-dark .solution-item {
     background: #ffffff !important;
-    color: #000000 !important;
-    border: 2px solid #e0f2ff !important;
-    box-shadow: 0 4px 20px rgba(0, 191, 255, 0.15) !important;
-    transition: all 0.4s ease !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 2.5rem 2rem !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle sky blue top accent line on cards */
+.section.bg-dark .service-card::before,
+.section.bg-dark .industry-card::before,
+.section.bg-dark .solution-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, #00bfff, #87ceeb);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.section.bg-dark .service-card:hover::before,
+.section.bg-dark .industry-card:hover::before,
+.section.bg-dark .solution-item:hover::before {
+    transform: scaleX(1);
 }
 
 .section.bg-dark .service-card:hover,
 .section.bg-dark .industry-card:hover,
 .section.bg-dark .solution-item:hover {
-    background: #000000 !important;
-    color: #ffffff !important;
-    border: 2px solid #00bfff !important;
-    box-shadow: 0 10px 40px rgba(0, 191, 255, 0.4) !important;
-    transform: translateY(-8px) !important;
+    border-color: #00bfff !important;
+    box-shadow: 0 20px 40px rgba(0, 191, 255, 0.15) !important;
+    transform: translateY(-5px) !important;
 }
 
 .section.bg-dark .service-card h3,
 .section.bg-dark .industry-card h3,
 .section.bg-dark .solution-item h3 {
-    color: #000000 !important;
-}
-
-.section.bg-dark .service-card:hover h3,
-.section.bg-dark .industry-card:hover h3,
-.section.bg-dark .solution-item:hover h3 {
-    color: #00bfff !important;
+    color: #0a0a0a !important;
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
 }
 
 .section.bg-dark .service-card p,
 .section.bg-dark .industry-card p,
 .section.bg-dark .solution-item p {
-    color: #333333 !important;
+    color: #4a5568 !important;
+    line-height: 1.7 !important;
+    font-size: 1rem !important;
 }
 
-.section.bg-dark .service-card:hover p,
-.section.bg-dark .industry-card:hover p,
-.section.bg-dark .solution-item:hover p {
-    color: #ffffff !important;
-}
-
-/* Icons on light sections */
 .section.bg-dark .service-card i,
 .section.bg-dark .industry-card i,
 .section.bg-dark .solution-icon i {
     color: #00bfff !important;
-    font-size: 2.5rem;
+    font-size: 2.2rem !important;
+    margin-bottom: 1.5rem !important;
+    display: inline-block;
 }
 
-.section.bg-dark .service-card:hover i,
-.section.bg-dark .industry-card:hover i,
-.section.bg-dark .solution-item:hover .solution-icon i {
-    color: #ffffff !important;
-}
-
-/* Learn More links */
+/* Learn More Link Styling */
 .section.bg-dark .text-accent {
     color: #00bfff !important;
-    font-weight: 700 !important;
+    font-weight: 600 !important;
+    text-decoration: none !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s ease;
 }
 
-.section.bg-dark .service-card:hover .text-accent {
-    color: #87CEEB !important;
+.section.bg-dark .text-accent:hover {
+    gap: 0.8rem;
+    color: #0088cc !important;
 }
 
 /* ============================================================
-   CARDS ON DARK SECTIONS (Challenges)
+   DARK SECTIONS: CHALLENGES, ROI, CTA
+   Deep Black with Sky Blue Glow Effects
    ============================================================ */
-.section.bg-darker .challenge-card {
-    background: rgba(0, 191, 255, 0.1) !important;
+.section.bg-darker {
+    background: #0a0a0a !important;
+    border-top: 1px solid rgba(0, 191, 255, 0.2);
+}
+
+.section.bg-darker .section-title {
     color: #ffffff !important;
-    border: 2px solid rgba(135, 206, 235, 0.3) !important;
+}
+
+.section.bg-darker .section-subtitle {
+    color: #a0aec0 !important;
+}
+
+/* Challenge Cards - Glassmorphism on Dark */
+.section.bg-darker .challenge-card {
+    background: rgba(255, 255, 255, 0.03) !important;
+    border: 1px solid rgba(0, 191, 255, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 2.5rem 2rem !important;
     backdrop-filter: blur(10px);
     transition: all 0.4s ease !important;
 }
 
 .section.bg-darker .challenge-card:hover {
-    background: rgba(0, 191, 255, 0.25) !important;
-    border: 2px solid #00bfff !important;
-    transform: translateY(-8px) !important;
-    box-shadow: 0 10px 40px rgba(0, 191, 255, 0.4) !important;
+    background: rgba(0, 191, 255, 0.08) !important;
+    border-color: #00bfff !important;
+    transform: translateY(-5px) !important;
+    box-shadow: 0 15px 30px rgba(0, 191, 255, 0.2) !important;
 }
 
 .section.bg-darker .challenge-card h3 {
     color: #ffffff !important;
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 0.8rem !important;
 }
 
 .section.bg-darker .challenge-card p {
-    color: #e0f2ff !important;
+    color: #a0aec0 !important;
+    line-height: 1.7 !important;
 }
 
-.section.bg-darker .challenge-card .card-icon {
+.section.bg-darker .card-icon {
     color: #00bfff !important;
+    font-size: 2rem !important;
+    margin-bottom: 1.2rem !important;
+    display: block;
 }
 
-/* ============================================================
-   ROI SECTION (Dark Background with White Items)
-   ============================================================ */
+/* ROI Items - Minimalist Checkmarks */
+.section.bg-darker .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
 .section.bg-darker .roi-item {
-    background: rgba(255, 255, 255, 0.08) !important;
-    border: 2px solid rgba(135, 206, 235, 0.3) !important;
-    color: #ffffff !important;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
     transition: all 0.3s ease !important;
 }
 
 .section.bg-darker .roi-item:hover {
-    background: rgba(0, 191, 255, 0.2) !important;
-    border-color: #00bfff !important;
-    transform: translateX(10px) !important;
+    background: rgba(0, 191, 255, 0.05) !important;
+    border-color: rgba(0, 191, 255, 0.3) !important;
 }
 
 .section.bg-darker .roi-item i {
     color: #00bfff !important;
-    font-size: 1.5rem;
+    font-size: 1.2rem !important;
+    flex-shrink: 0;
 }
 
 .section.bg-darker .roi-item span {
-    color: #ffffff !important;
-    font-weight: 600;
+    color: #e2e8f0 !important;
+    font-weight: 500 !important;
+    font-size: 1.05rem !important;
 }
 
 /* ============================================================
-   CTA SECTION (Final Call to Action)
+   CTA SECTION - High Impact Finale
    ============================================================ */
 .section.bg-darker.text-center {
-    background: linear-gradient(135deg, 
-        #000000 0%, 
-        #003d66 50%, 
-        #00bfff 100%) !important;
-    text-align: center;
+    background: linear-gradient(180deg, #0a0a0a 0%, #001a33 100%) !important;
+    padding: 8rem 0 !important;
 }
 
 .section.bg-darker.text-center h2 {
+    font-size: 3rem !important;
     color: #ffffff !important;
-    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.5rem !important;
 }
 
 .section.bg-darker.text-center .section-subtitle {
-    color: #e0f2ff !important;
+    color: #87ceeb !important;
+    font-size: 1.2rem !important;
 }
 
-/* CTA Buttons */
-.section.bg-darker.text-center .btn-primary {
+/* CTA Buttons - Maximum Contrast */
+.hero-buttons, 
+.section.bg-darker.text-center > div:last-child {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2.5rem;
+}
+
+.btn-primary {
+    background: #00bfff !important;
+    color: #000000 !important;
+    border: 2px solid #00bfff !important;
+    padding: 1rem 2.5rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.3) !important;
+}
+
+.btn-primary:hover {
     background: #ffffff !important;
     color: #000000 !important;
-    border: 2px solid #ffffff !important;
-    font-weight: 700 !important;
-    padding: 1rem 2.5rem !important;
-    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3) !important;
-    transition: all 0.3s ease !important;
-}
-
-.section.bg-darker.text-center .btn-primary:hover {
-    background: #00bfff !important;
-    color: #ffffff !important;
-    border-color: #00bfff !important;
+    border-color: #ffffff !important;
     transform: translateY(-3px) !important;
-    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.6) !important;
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4) !important;
 }
 
-.section.bg-darker.text-center .btn-secondary {
+.btn-secondary {
     background: transparent !important;
     color: #ffffff !important;
-    border: 2px solid #ffffff !important;
-    font-weight: 700 !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
     padding: 1rem 2.5rem !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
     transition: all 0.3s ease !important;
 }
 
-.section.bg-darker.text-center .btn-secondary:hover {
-    background: #ffffff !important;
-    color: #000000 !important;
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: #00bfff !important;
+    color: #00bfff !important;
     transform: translateY(-3px) !important;
 }
 
 /* ============================================================
-   FOOTER - Branded
+   FOOTER - Refined & Professional
    ============================================================ */
 .footer {
-    background: linear-gradient(135deg, 
-        #000000 0%, 
-        #001a33 100%) !important;
-    border-top: 3px solid #00bfff;
-    color: #ffffff !important;
+    background: #050505 !important;
+    border-top: 1px solid rgba(0, 191, 255, 0.15);
+    padding: 5rem 0 2rem !important;
+    color: #a0aec0 !important;
 }
 
-.footer h3, .footer h4 {
+.footer h3 {
     color: #ffffff !important;
+    font-size: 1.8rem !important;
+    margin-bottom: 1.5rem !important;
 }
 
 .footer h3 span {
     color: #00bfff !important;
 }
 
+.footer h4 {
+    color: #ffffff !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 1.5rem !important;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer ul li {
+    margin-bottom: 0.8rem !important;
+}
+
 .footer a {
-    color: #87CEEB !important;
+    color: #87ceeb !important;
     transition: color 0.3s ease;
 }
 
 .footer a:hover {
-    color: #ffffff !important;
+    color: #00bfff !important;
 }
 
 .footer .contact-info i {
     color: #00bfff !important;
+    width: 20px;
+    margin-right: 0.5rem;
 }
 
 .footer-bottom {
-    border-top: 1px solid rgba(0, 191, 255, 0.3);
-    color: #87CEEB !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: 3rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: #4a5568 !important;
+    font-size: 0.9rem;
 }
 
 /* ============================================================
    MOBILE OPTIMIZATION
    ============================================================ */
 @media (max-width: 768px) {
-    .section.bg-dark {
-        background: #f0f8ff !important;
+    .section {
+        padding: 4rem 0 !important;
     }
-    .section.bg-darker {
-        background: #001a33 !important;
+    
+    .section-title {
+        font-size: 2rem !important;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    .section.bg-darker.text-center h2 {
+        font-size: 2rem !important;
+    }
+    
+    .btn-primary, .btn-secondary {
+        padding: 0.9rem 2rem !important;
+        font-size: 1rem !important;
+        width: 100%;
+        text-align: center;
     }
 }
