@@ -1203,3 +1203,46 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
     flex-wrap: wrap;
     margin-top: 2rem;
 }
+
+
+
+
+/* --- MOBILE OPTIMIZATION: Static Image Instead of Video --- */
+@media (max-width: 768px) {
+    /* Hide video on mobile */
+    .hero-video {
+        display: none;
+    }
+    
+    /* Show static background image on mobile */
+    .hero {
+        background: linear-gradient(135deg, 
+            rgba(0, 0, 0, 0.8) 0%, 
+            rgba(0, 123, 255, 0.5) 50%, 
+            rgba(135, 206, 235, 0.6) 100%),
+            url('../assets/images/mobile-hero-bg.jpg') center/cover no-repeat fixed;
+    }
+    
+    /* Ensure overlay still works on mobile */
+    .hero-overlay {
+        background: linear-gradient(135deg, 
+            rgba(0, 0, 0, 0.7) 0%, 
+            rgba(0, 123, 255, 0.4) 50%, 
+            rgba(135, 206, 235, 0.5) 100%);
+    }
+    
+    /* Adjust text for mobile */
+    .hero h1 {
+        font-size: 2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+}
+
+/* Desktop: Video plays normally (no changes needed) */
+@media (min-width: 769px) {
+    .hero {
+        background: none; /* Remove background image on desktop */
+    }
+}
