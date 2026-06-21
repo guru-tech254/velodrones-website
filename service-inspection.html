@@ -6,28 +6,15 @@
     <meta name="description" content="Velodrones - Professional industrial inspection services using advanced drone technology. Safe, detailed assessment of towers, pipelines, bridges, and powerlines.">
     <title>Industrial Inspections | Velodrones</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     
     <style>
-        /* Service Page Specific Styles */
         .service-hero {
-            background: linear-gradient(135deg, 
-                #000814 0%, 
-                #001d3d 30%, 
-                #003566 60%, 
-                #001d3d 100%);
+            background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%);
             padding: 10rem 0 5rem;
             text-align: center;
             position: relative;
@@ -74,6 +61,43 @@
             margin: 0 auto;
             line-height: 1.7;
         }
+
+        /* Hero Image Gallery */
+        .hero-image-showcase {
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .showcase-image {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 191, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.4s ease;
+            height: 200px;
+        }
+
+        .showcase-image:hover {
+            transform: translateY(-8px);
+            border-color: rgba(0, 191, 255, 0.8);
+            box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3);
+        }
+
+        .showcase-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .showcase-image.large {
+            grid-column: span 2;
+            height: 200px;
+        }
         
         .service-content {
             background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%);
@@ -95,6 +119,43 @@
         .service-content .container {
             position: relative;
             z-index: 1;
+        }
+
+        /* Value Proposition Section */
+        .value-prop {
+            background: rgba(0, 29, 61, 0.6);
+            border: 1px solid rgba(0, 191, 255, 0.3);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        .value-prop-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .value-stat {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .value-stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #00bfff;
+            display: block;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 20px rgba(0, 191, 255, 0.5);
+        }
+
+        .value-stat-label {
+            color: #b8d4e8;
+            font-size: 1rem;
+            font-weight: 500;
         }
         
         .service-grid {
@@ -136,6 +197,62 @@
             color: #b8d4e8;
             line-height: 1.7;
         }
+
+        /* Image Gallery Section */
+        .gallery-section {
+            margin: 4rem 0;
+        }
+
+        .gallery-section h2 {
+            color: #87CEEB;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .gallery-item {
+            border-radius: 12px;
+            overflow: hidden;
+            border: 2px solid rgba(0, 191, 255, 0.2);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            border-color: rgba(0, 191, 255, 0.6);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.25);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 8, 20, 0.95), transparent);
+            color: #ffffff;
+            padding: 1.5rem 1rem 1rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
         
         .service-details h2 {
             color: #87CEEB;
@@ -173,6 +290,50 @@
             position: absolute;
             left: 0;
             top: 0.8rem;
+        }
+
+        /* Technology Showcase */
+        .tech-showcase {
+            background: rgba(0, 191, 255, 0.05);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            border-radius: 16px;
+            padding: 3rem;
+            margin: 3rem 0;
+        }
+
+        .tech-showcase h3 {
+            color: #87CEEB;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .tech-item i {
+            font-size: 2.5rem;
+            color: #00bfff;
+            margin-bottom: 1rem;
+        }
+
+        .tech-item h4 {
+            color: #ffffff;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-item p {
+            color: #b8d4e8;
+            font-size: 0.95rem;
         }
         
         .cta-section {
@@ -253,12 +414,23 @@
                 margin-left: 0;
                 margin-top: 1rem;
             }
+            .hero-image-showcase {
+                grid-template-columns: 1fr;
+            }
+            .showcase-image.large {
+                grid-column: span 1;
+            }
+            .value-prop-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
     <header class="header" id="header">
         <nav class="navbar">
             <div class="logo">
@@ -278,29 +450,88 @@
         </nav>
     </header>
 
-    <!-- Service Hero -->
     <section class="service-hero">
         <div class="container">
             <i class="fas fa-industry service-icon-large"></i>
             <h1>Industrial Inspections</h1>
-            <p>Safe, detailed assessment of towers, pipelines, bridges, and powerlines without scaffolding or operational shutdowns. We deliver engineering-grade visual intelligence that keeps your assets running and your people safe.</p>
+            <p>See what others miss. Inspect the impossible without shutting down operations. We deliver engineering-grade visual intelligence that keeps your assets running and your people safe.</p>
+            
+            <!-- Hero Image Showcase -->
+            <div class="hero-image-showcase">
+                <div class="showcase-image large">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=600&auto=format" alt="Power transmission tower inspection">
+                </div>
+                <div class="showcase-image">
+                    <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=400&auto=format" alt="Thermal inspection">
+                </div>
+                <div class="showcase-image">
+                    <img src="https://images.unsplash.com/photo-1548336934-9071a25a3f41?w=400&auto=format" alt="Industrial facility">
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Service Content -->
     <section class="service-content">
         <div class="container">
-            <div class="service-details">
-                <h2>Why Choose Drone-Based Industrial Inspections?</h2>
-                <p>Traditional inspection methods require expensive scaffolding, rope access teams, crane rentals, and often force costly operational shutdowns. Velodrones replaces these outdated approaches with advanced UAV technology that captures millimeter-level detail from every angle — safely, quickly, and without disrupting your operations.</p>
+            <!-- Value Proposition -->
+            <div class="value-prop">
+                <h2 style="color: #87CEEB; font-size: 2rem; text-align: center; margin-bottom: 0.5rem;">Why Industry Leaders Choose Velodrones</h2>
+                <p style="color: #b8d4e8; text-align: center; font-size: 1.1rem;">We don't just fly drones — we deliver measurable business outcomes</p>
                 
-                <p>Our enterprise-grade drones are equipped with high-resolution optical zoom cameras, thermal imaging sensors, and RTK positioning systems that deliver data accurate enough for engineering decisions. Every inspection is conducted by certified pilots following strict aviation safety protocols.</p>
+                <div class="value-prop-grid">
+                    <div class="value-stat">
+                        <span class="value-stat-number">85%</span>
+                        <span class="value-stat-label">Faster Than Traditional Methods</span>
+                    </div>
+                    <div class="value-stat">
+                        <span class="value-stat-number">0</span>
+                        <span class="value-stat-label">Personnel Safety Incidents</span>
+                    </div>
+                    <div class="value-stat">
+                        <span class="value-stat-number">5cm</span>
+                        <span class="value-stat-label">Sub-Centimeter Accuracy</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-details">
+                <h2>The Problem With Traditional Inspections</h2>
+                <p style="font-size: 1.15rem; line-height: 1.9;">Every day you delay a proper inspection, you're gambling with catastrophic failure. Scaffolding costs spiral out of control. Rope access teams risk lives at heights. Operational shutdowns bleed revenue. And worst of all — you're still missing critical defects hidden in hard-to-reach places.</p>
+                
+                <p style="font-size: 1.15rem; line-height: 1.9;"><strong>Velodrones eliminates these risks entirely.</strong> Our enterprise-grade UAVs equipped with 45MP cameras, thermal sensors, and RTK positioning capture millimeter-level detail from angles ground crews can't reach — while your operations continue uninterrupted.</p>
+            </div>
+
+            <!-- Technology Showcase -->
+            <div class="tech-showcase">
+                <h3><i class="fas fa-microchip" style="margin-right: 0.8rem;"></i>Advanced Technology Behind Every Inspection</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <i class="fas fa-camera"></i>
+                        <h4>45MP Optical Zoom</h4>
+                        <p>Capture hairline cracks from 50 meters away</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-temperature-high"></i>
+                        <h4>Thermal Imaging</h4>
+                        <p>Detect hotspots before they cause failures</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-satellite-dish"></i>
+                        <h4>RTK Positioning</h4>
+                        <p>Centimeter-accurate georeferencing</p>
+                    </div>
+                    <div class="tech-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Certified Pilots</h4>
+                        <p>Strict aviation safety protocols</p>
+                    </div>
+                </div>
             </div>
 
             <div class="service-grid">
                 <div class="service-feature">
                     <i class="fas fa-bolt"></i>
-                    <h3>Powerline & Transmission Inspections</h3>
+                    <h3>Powerline & Transmission</h3>
                     <p>Detailed visual and thermal assessment of towers, conductors, insulators, and hardware without de-energizing lines or deploying ground crews.</p>
                 </div>
                 
@@ -335,33 +566,56 @@
                 </div>
             </div>
 
+            <!-- Image Gallery -->
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="margin-right: 0.8rem;"></i>Real Inspection Results</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=500&auto=format" alt="Transmission tower">
+                        <div class="gallery-caption">Transmission Tower Inspection</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=500&auto=format" alt="Thermal analysis">
+                        <div class="gallery-caption">Thermal Hotspot Detection</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1548336934-9071a25a3f41?w=500&auto=format" alt="Industrial plant">
+                        <div class="gallery-caption">Refinery Facility Survey</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1558403194-611308249627?w=500&auto=format" alt="Bridge inspection">
+                        <div class="gallery-caption">Bridge Underside Analysis</div>
+                    </div>
+                </div>
+            </div>
+
             <h2>What You Receive</h2>
             <ul>
-                <li>High-resolution orthomosaic imagery of the entire asset</li>
-                <li>Thermal analysis reports identifying anomalies and defects</li>
-                <li>Georeferenced defect maps with precise GPS coordinates</li>
-                <li>3D models and digital twins for long-term asset monitoring</li>
-                <li>Comprehensive inspection reports with prioritized recommendations</li>
-                <li>Before/after comparison data for maintenance tracking</li>
-                <li>Compliance-ready documentation for regulatory submissions</li>
+                <li><strong>High-resolution orthomosaic imagery</strong> of the entire asset — every bolt, every connection, every square inch documented</li>
+                <li><strong>Thermal analysis reports</strong> identifying anomalies and defects invisible to the naked eye</li>
+                <li><strong>Georeferenced defect maps</strong> with precise GPS coordinates so your maintenance team finds issues in seconds</li>
+                <li><strong>3D models and digital twins</strong> for long-term asset monitoring and trend analysis</li>
+                <li><strong>Comprehensive inspection reports</strong> with prioritized recommendations — not just data, but actionable intelligence</li>
+                <li><strong>Before/after comparison data</strong> for maintenance tracking and regulatory compliance</li>
+                <li><strong>Compliance-ready documentation</strong> that satisfies even the strictest regulatory bodies</li>
             </ul>
 
             <h2>The Velodrones Advantage</h2>
-            <p>Our inspection services deliver measurable ROI: <strong>85% faster</strong> than traditional methods, <strong>zero personnel exposure</strong> to hazardous environments, and <strong>sub-centimeter accuracy</strong> that meets engineering standards. We don't just fly drones — we deliver actionable intelligence that prevents failures, extends asset life, and protects your bottom line.</p>
+            <p style="font-size: 1.15rem; line-height: 1.9;">While your competitors are still erecting scaffolding and shutting down operations, our clients are already back to full production with comprehensive inspection data in hand. <strong>We deliver 85% faster turnaround, zero personnel exposure to hazardous environments, and sub-centimeter accuracy</strong> that meets the most demanding engineering standards.</p>
+            
+            <p style="font-size: 1.15rem; line-height: 1.9; margin-top: 1.5rem; padding: 2rem; background: rgba(0, 191, 255, 0.05); border-left: 4px solid #00bfff; border-radius: 8px;"><strong style="color: #87CEEB;">Bottom line:</strong> We don't just fly drones — we deliver actionable intelligence that prevents catastrophic failures, extends asset life by years, and protects your bottom line. Every inspection pays for itself many times over in avoided downtime and prevented disasters.</p>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta-section">
         <div class="container">
             <h2>Ready to Inspect Smarter?</h2>
-            <p>Partner with Velodrones for your next industrial inspection. Let's discuss how we can reduce your risk and accelerate your maintenance schedule.</p>
-            <a href="contact.html" class="btn-primary">Request a Consultation</a>
+            <p>Don't wait for a failure to force your hand. Partner with Velodrones today and discover what you've been missing. Your assets — and your balance sheet — will thank you.</p>
+            <a href="contact.html" class="btn-primary">Request a Consultation <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
             <a href="portfolio.html" class="btn-secondary">View Our Work</a>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
