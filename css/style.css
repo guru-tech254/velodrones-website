@@ -106,6 +106,53 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
   padding: var(--section-padding);
 }
 
+/* Services section video background */
+#services {
+  position: relative;
+  overflow: hidden;
+}
+
+.services-video-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.services-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: cover;
+  filter: saturate(1) brightness(0.6);
+}
+
+.services-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
+  z-index: 1;
+  pointer-events: none;
+}
+
+.services-content {
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .services-video-wrapper { display: none; }
+}
+
 .bg-dark { background-color: var(--bg-dark); }
 .bg-darker { background-color: var(--bg-darker); }
 .bg-card { background-color: var(--bg-card); }

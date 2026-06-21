@@ -64,7 +64,14 @@
 
     <!-- Services Section -->
     <section class="section bg-dark" id="services">
-        <div class="container">
+        <div class="services-video-wrapper">
+            <video class="services-bg-video" autoplay muted loop playsinline poster="assets/images/services-poster.jpg">
+                <source src="assets/videos/services-bg.mp4" type="video/mp4">
+                <!-- Add additional source tags (webm) if available for better browser support -->
+            </video>
+            <div class="services-overlay"></div>
+        </div>
+        <div class="container services-content">
             <h2 class="section-title">Enterprise-Grade Aerial & Geospatial Services</h2>
             <p class="section-subtitle">From critical infrastructure inspections to high-precision topographical mapping, we deliver engineering-grade data tailored to your industry's most demanding requirements.</p>
             
