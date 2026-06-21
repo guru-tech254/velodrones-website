@@ -1549,3 +1549,121 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
         grid-template-columns: 1fr;
     }
 }
+
+
+/* ============================================================
+   ABOUT PAGE - Bright White & Sky Blue Design
+   (Overrides dark theme for about.html only)
+   ============================================================ */
+
+/* About page hero section */
+.page-hero {
+    background: linear-gradient(135deg, 
+        #ffffff 0%, 
+        #f0f9ff 50%, 
+        #e0f4ff 100%) !important;
+    padding: 8rem 0 4rem !important;
+    border-bottom: 2px solid rgba(0, 191, 255, 0.2);
+}
+
+.page-hero h1 {
+    color: #0a0a0a !important;
+    text-shadow: 0 2px 10px rgba(0, 191, 255, 0.2) !important;
+}
+
+.page-hero p {
+    color: #2d3748 !important;
+}
+
+/* About page sections - Light backgrounds */
+body:has(.page-hero) .section.bg-secondary {
+    background: linear-gradient(135deg, 
+        #f8fcff 0%, 
+        #ffffff 50%, 
+        #f0f9ff 100%) !important;
+}
+
+body:has(.page-hero) .section {
+    background: #ffffff !important;
+}
+
+/* About page cards - White with sky blue accents */
+body:has(.page-hero) .card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 191, 255, 0.2) !important;
+    border-left: 4px solid #00bfff !important;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+body:has(.page-hero) .card:hover {
+    background: #f0f9ff !important;
+    border-color: #00bfff !important;
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.2) !important;
+    transform: translateY(-3px) !important;
+}
+
+body:has(.page-hero) .card h3 {
+    color: #0a0a0a !important;
+}
+
+body:has(.page-hero) .card p {
+    color: #4a5568 !important;
+}
+
+body:has(.page-hero) .card-icon {
+    color: #00bfff !important;
+}
+
+/* About page text colors */
+body:has(.page-hero) h2 {
+    color: #0a0a0a !important;
+}
+
+body:has(.page-hero) p {
+    color: #2d3748 !important;
+}
+
+/* About page image styling */
+body:has(.page-hero) img {
+    border: 2px solid rgba(0, 191, 255, 0.2) !important;
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.15) !important;
+}
+
+/* Alternative: If :has() doesn't work, use body class */
+body.about-page .section {
+    background: #ffffff !important;
+}
+
+body.about-page .page-hero {
+    background: linear-gradient(135deg, 
+        #ffffff 0%, 
+        #f0f9ff 50%, 
+        #e0f4ff 100%) !important;
+}
+
+body.about-page .card {
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 191, 255, 0.2) !important;
+    border-left: 4px solid #00bfff !important;
+    box-shadow: 0 4px 15px rgba(0, 191, 255, 0.1) !important;
+}
+
+body.about-page .card:hover {
+    background: #f0f9ff !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 25px rgba(0, 191, 255, 0.2) !important;
+}
+
+body.about-page h2,
+body.about-page h3 {
+    color: #0a0a0a !important;
+}
+
+body.about-page p {
+    color: #2d3748 !important;
+}
+
+body.about-page .card-icon {
+    color: #00bfff !important;
+}
