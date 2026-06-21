@@ -106,53 +106,6 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
   padding: var(--section-padding);
 }
 
-/* Services section video background */
-#services {
-  position: relative;
-  overflow: hidden;
-}
-
-.services-video-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-
-.services-bg-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: cover;
-  filter: saturate(1) brightness(0.6);
-}
-
-.services-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45));
-  z-index: 1;
-  pointer-events: none;
-}
-
-.services-content {
-  position: relative;
-  z-index: 2;
-}
-
-@media (max-width: 768px) {
-  .services-video-wrapper { display: none; }
-}
-
 .bg-dark { background-color: var(--bg-dark); }
 .bg-darker { background-color: var(--bg-darker); }
 .bg-card { background-color: var(--bg-card); }
@@ -963,3 +916,62 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
 .mb-1 { margin-bottom: 1rem; }
 .mb-2 { margin-bottom: 2rem; }
 .mb-3 { margin-bottom: 3rem; }
+
+/* Services Section with Background Video */
+.services-section {
+    position: relative;
+    overflow: hidden;
+    padding: 100px 0;
+    min-height: 600px;
+}
+
+.services-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.services-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(5, 5, 5, 0.9) 0%, rgba(0, 123, 255, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Ensure content stays above video */
+.services-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Make service cards semi-transparent to show video through */
+.services-section .service-card {
+    background: rgba(15, 17, 21, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 123, 255, 0.2);
+}
+
+.services-section .service-card:hover {
+    background: rgba(15, 17, 21, 0.95);
+    border-color: var(--accent);
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .services-video {
+        display: none; /* Hide video on mobile for performance */
+    }
+    .services-section {
+        background: var(--bg-dark);
+    }
+}

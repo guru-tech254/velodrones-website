@@ -132,36 +132,3 @@ if ('IntersectionObserver' in window) {
 console.log('%c VELODRONES ', 'background: linear-gradient(135deg, #007BFF, #00C6FF); color: white; font-size: 24px; font-weight: bold; padding: 10px 20px;');
 console.log('%c Premium Aerial Intelligence & Geospatial Solutions ', 'color: #a0a5b0; font-size: 12px;');
 console.log('%c Contact: velodronesag@gmail.com | +254 115 874 187 ', 'color: #a0a5b0; font-size: 12px;');
-
-// Services background video: ensure mobile-friendly behavior and autoplay fallback
-(function() {
-    const vid = document.querySelector('.services-bg-video');
-    if (!vid) return;
-
-    const mq = window.matchMedia('(max-width: 768px)');
-
-    function updatePlayback() {
-        if (mq.matches) {
-            // Pause and hide video on small screens to save data
-            try { vid.pause(); } catch (e) { /* ignore */ }
-        } else {
-            // Attempt to autoplay (video is muted so should work in modern browsers)
-            const p = vid.play();
-            if (p && p.catch) p.catch(() => { /* autoplay blocked – will play on interaction */ });
-        }
-    }
-
-    // Initial check
-    updatePlayback();
-
-    // React to viewport changes
-    if (mq.addEventListener) mq.addEventListener('change', updatePlayback);
-    else if (mq.addListener) mq.addListener(updatePlayback);
-
-    // If autoplay is blocked, allow play on first user interaction
-    document.addEventListener('click', function onFirstInteraction() {
-        if (window.innerWidth > 768) {
-            vid.play().catch(() => {});
-        }
-    }, { once: true });
-})();
