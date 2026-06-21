@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Velodrones - Professional industrial inspection services using advanced drone technology. Safe, detailed assessment of towers, pipelines, bridges, and powerlines.">
+    <title>Industrial Inspections | Velodrones</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* Service Page Specific Styles */
+        .service-hero {
+            background: linear-gradient(135deg, 
+                #000814 0%, 
+                #001d3d 30%, 
+                #003566 60%, 
+                #001d3d 100%);
+            padding: 10rem 0 5rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 2px solid rgba(0, 191, 255, 0.3);
+        }
+        
+        .service-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 30% 40%, rgba(0, 191, 255, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 60%, rgba(135, 206, 235, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .service-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-icon-large {
+            font-size: 4rem;
+            color: #00bfff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+        }
+        
+        .service-hero h1 {
+            color: #87CEEB;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5), 0 0 60px rgba(0, 191, 255, 0.3);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        
+        .service-hero p {
+            color: #b8d4e8;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        .service-content {
+            background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%);
+            padding: 5rem 0;
+            position: relative;
+        }
+        
+        .service-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 30%, rgba(0, 191, 255, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .service-content .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .service-feature {
+            background: rgba(0, 29, 61, 0.6);
+            border: 1px solid rgba(0, 191, 255, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.4s ease;
+        }
+        
+        .service-feature:hover {
+            background: rgba(0, 53, 102, 0.7);
+            border-color: rgba(0, 191, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 191, 255, 0.2);
+        }
+        
+        .service-feature i {
+            color: #00bfff;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .service-feature h3 {
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+        }
+        
+        .service-feature p {
+            color: #b8d4e8;
+            line-height: 1.7;
+        }
+        
+        .service-details h2 {
+            color: #87CEEB;
+            text-shadow: 0 0 30px rgba(0, 191, 255, 0.5);
+            font-size: 2rem;
+            margin: 3rem 0 1.5rem;
+        }
+        
+        .service-details p {
+            color: #b8d4e8;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+        
+        .service-details ul li {
+            color: #b8d4e8;
+            padding: 0.8rem 0 0.8rem 2rem;
+            position: relative;
+            font-size: 1.05rem;
+            border-bottom: 1px solid rgba(0, 191, 255, 0.1);
+        }
+        
+        .service-details ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: #00d484;
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #000814 0%, #001d3d 40%, #003566 70%, #00bfff 100%);
+            padding: 6rem 0;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: #ffffff;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            color: #e0f2ff;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn-primary {
+            background: #00bfff;
+            color: #000000;
+            border: 2px solid #00bfff;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4);
+        }
+        
+        .btn-primary:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: #ffffff;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            border-radius: 8px;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #00bfff;
+            color: #00bfff;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .service-hero {
+                padding: 8rem 0 3rem;
+            }
+            .service-hero h1 {
+                font-size: 2rem;
+            }
+            .service-details h2 {
+                font-size: 1.6rem;
+            }
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="index.html">VELO<span>DRONES</span></a>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#industries">Industries</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+        <div class="container">
+            <i class="fas fa-industry service-icon-large"></i>
+            <h1>Industrial Inspections</h1>
+            <p>Safe, detailed assessment of towers, pipelines, bridges, and powerlines without scaffolding or operational shutdowns. We deliver engineering-grade visual intelligence that keeps your assets running and your people safe.</p>
+        </div>
+    </section>
+
+    <!-- Service Content -->
+    <section class="service-content">
+        <div class="container">
+            <div class="service-details">
+                <h2>Why Choose Drone-Based Industrial Inspections?</h2>
+                <p>Traditional inspection methods require expensive scaffolding, rope access teams, crane rentals, and often force costly operational shutdowns. Velodrones replaces these outdated approaches with advanced UAV technology that captures millimeter-level detail from every angle — safely, quickly, and without disrupting your operations.</p>
+                
+                <p>Our enterprise-grade drones are equipped with high-resolution optical zoom cameras, thermal imaging sensors, and RTK positioning systems that deliver data accurate enough for engineering decisions. Every inspection is conducted by certified pilots following strict aviation safety protocols.</p>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-feature">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Powerline & Transmission Inspections</h3>
+                    <p>Detailed visual and thermal assessment of towers, conductors, insulators, and hardware without de-energizing lines or deploying ground crews.</p>
+                </div>
+                
+                <div class="service-feature">
+                    <i class="fas fa-oil-well"></i>
+                    <h3>Pipeline & Corridor Surveys</h3>
+                    <p>Comprehensive aerial inspection of pipeline routes, identifying leaks, corrosion, encroachments, and right-of-way issues across hundreds of kilometers.</p>
+                </div>
+                
+                <div class="service-feature">
+                    <i class="fas fa-bridge"></i>
+                    <h3>Bridge & Structural Assessments</h3>
+                    <p>High-resolution imaging of bridge undersides, pylons, cables, and expansion joints — areas that are dangerous or impossible to reach manually.</p>
+                </div>
+                
+                <div class="service-feature">
+                    <i class="fas fa-industry"></i>
+                    <h3>Plant & Facility Inspections</h3>
+                    <p>Roof assessments, stack inspections, flare stack monitoring, and confined space evaluations without shutting down production.</p>
+                </div>
+                
+                <div class="service-feature">
+                    <i class="fas fa-wind"></i>
+                    <h3>Wind Turbine Inspections</h3>
+                    <p>Blade surface analysis, leading-edge erosion detection, and structural integrity assessments at heights of 100+ meters — safely and efficiently.</p>
+                </div>
+                
+                <div class="service-feature">
+                    <i class="fas fa-solar-panel"></i>
+                    <h3>Solar Farm Audits</h3>
+                    <p>Thermal imaging to detect faulty panels, hot spots, and underperforming modules across large-scale solar installations.</p>
+                </div>
+            </div>
+
+            <h2>What You Receive</h2>
+            <ul>
+                <li>High-resolution orthomosaic imagery of the entire asset</li>
+                <li>Thermal analysis reports identifying anomalies and defects</li>
+                <li>Georeferenced defect maps with precise GPS coordinates</li>
+                <li>3D models and digital twins for long-term asset monitoring</li>
+                <li>Comprehensive inspection reports with prioritized recommendations</li>
+                <li>Before/after comparison data for maintenance tracking</li>
+                <li>Compliance-ready documentation for regulatory submissions</li>
+            </ul>
+
+            <h2>The Velodrones Advantage</h2>
+            <p>Our inspection services deliver measurable ROI: <strong>85% faster</strong> than traditional methods, <strong>zero personnel exposure</strong> to hazardous environments, and <strong>sub-centimeter accuracy</strong> that meets engineering standards. We don't just fly drones — we deliver actionable intelligence that prevents failures, extends asset life, and protects your bottom line.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Inspect Smarter?</h2>
+            <p>Partner with Velodrones for your next industrial inspection. Let's discuss how we can reduce your risk and accelerate your maintenance schedule.</p>
+            <a href="contact.html" class="btn-primary">Request a Consultation</a>
+            <a href="portfolio.html" class="btn-secondary">View Our Work</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>VELO<span>DRONES</span></h3>
+                    <p>Premium aerial intelligence and geospatial solutions helping organizations operate more efficiently, safely, and profitably.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html#services">Our Services</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact Info</h4>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-envelope"></i><a href="mailto:velodronesag@gmail.com">velodronesag@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i><a href="tel:+254115874187">+254 115 874 187</a></li>
+                        <li><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Velodrones. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
