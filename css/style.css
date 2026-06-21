@@ -1246,3 +1246,289 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
         background: none; /* Remove background image on desktop */
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   BRANDED SECTION BACKGROUNDS - Sky Blue / White / Black
+   ============================================================ */
+
+/* --- LIGHT SECTIONS (Services, Solutions, Industries) --- */
+.section.bg-dark {
+    background: linear-gradient(135deg, 
+        #f0f8ff 0%,           /* Alice Blue - very light */
+        #e6f4ff 50%,          /* Light Sky Blue */
+        #ffffff 100%) !important; /* White */
+    color: #0a0a2e !important;
+    border-top: 3px solid #00bfff;
+    border-bottom: 3px solid #00bfff;
+}
+
+/* --- DARK SECTIONS (Challenges, ROI, CTA) --- */
+.section.bg-darker {
+    background: linear-gradient(135deg, 
+        #000000 0%,           /* Pure Black */
+        #001a33 40%,          /* Deep Navy */
+        #003d66 70%,          /* Navy Blue */
+        #006699 100%) !important; /* Brand Blue */
+    color: #ffffff !important;
+    border-top: 3px solid #00bfff;
+    border-bottom: 3px solid #00bfff;
+}
+
+/* --- SECTION TITLES - Branded Colors --- */
+.section.bg-dark .section-title {
+    color: #000000 !important;
+    text-shadow: 0 2px 10px rgba(0, 191, 255, 0.3);
+}
+
+.section.bg-dark .section-subtitle {
+    color: #003d66 !important;
+}
+
+.section.bg-darker .section-title {
+    color: #ffffff !important;
+    text-shadow: 0 2px 15px rgba(0, 191, 255, 0.5);
+}
+
+.section.bg-darker .section-subtitle {
+    color: #87CEEB !important;
+}
+
+/* ============================================================
+   CARDS ON LIGHT SECTIONS (Services, Solutions, Industries)
+   ============================================================ */
+.section.bg-dark .service-card,
+.section.bg-dark .industry-card,
+.section.bg-dark .solution-item {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #e0f2ff !important;
+    box-shadow: 0 4px 20px rgba(0, 191, 255, 0.15) !important;
+    transition: all 0.4s ease !important;
+}
+
+.section.bg-dark .service-card:hover,
+.section.bg-dark .industry-card:hover,
+.section.bg-dark .solution-item:hover {
+    background: #000000 !important;
+    color: #ffffff !important;
+    border: 2px solid #00bfff !important;
+    box-shadow: 0 10px 40px rgba(0, 191, 255, 0.4) !important;
+    transform: translateY(-8px) !important;
+}
+
+.section.bg-dark .service-card h3,
+.section.bg-dark .industry-card h3,
+.section.bg-dark .solution-item h3 {
+    color: #000000 !important;
+}
+
+.section.bg-dark .service-card:hover h3,
+.section.bg-dark .industry-card:hover h3,
+.section.bg-dark .solution-item:hover h3 {
+    color: #00bfff !important;
+}
+
+.section.bg-dark .service-card p,
+.section.bg-dark .industry-card p,
+.section.bg-dark .solution-item p {
+    color: #333333 !important;
+}
+
+.section.bg-dark .service-card:hover p,
+.section.bg-dark .industry-card:hover p,
+.section.bg-dark .solution-item:hover p {
+    color: #ffffff !important;
+}
+
+/* Icons on light sections */
+.section.bg-dark .service-card i,
+.section.bg-dark .industry-card i,
+.section.bg-dark .solution-icon i {
+    color: #00bfff !important;
+    font-size: 2.5rem;
+}
+
+.section.bg-dark .service-card:hover i,
+.section.bg-dark .industry-card:hover i,
+.section.bg-dark .solution-item:hover .solution-icon i {
+    color: #ffffff !important;
+}
+
+/* Learn More links */
+.section.bg-dark .text-accent {
+    color: #00bfff !important;
+    font-weight: 700 !important;
+}
+
+.section.bg-dark .service-card:hover .text-accent {
+    color: #87CEEB !important;
+}
+
+/* ============================================================
+   CARDS ON DARK SECTIONS (Challenges)
+   ============================================================ */
+.section.bg-darker .challenge-card {
+    background: rgba(0, 191, 255, 0.1) !important;
+    color: #ffffff !important;
+    border: 2px solid rgba(135, 206, 235, 0.3) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease !important;
+}
+
+.section.bg-darker .challenge-card:hover {
+    background: rgba(0, 191, 255, 0.25) !important;
+    border: 2px solid #00bfff !important;
+    transform: translateY(-8px) !important;
+    box-shadow: 0 10px 40px rgba(0, 191, 255, 0.4) !important;
+}
+
+.section.bg-darker .challenge-card h3 {
+    color: #ffffff !important;
+}
+
+.section.bg-darker .challenge-card p {
+    color: #e0f2ff !important;
+}
+
+.section.bg-darker .challenge-card .card-icon {
+    color: #00bfff !important;
+}
+
+/* ============================================================
+   ROI SECTION (Dark Background with White Items)
+   ============================================================ */
+.section.bg-darker .roi-item {
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 2px solid rgba(135, 206, 235, 0.3) !important;
+    color: #ffffff !important;
+    transition: all 0.3s ease !important;
+}
+
+.section.bg-darker .roi-item:hover {
+    background: rgba(0, 191, 255, 0.2) !important;
+    border-color: #00bfff !important;
+    transform: translateX(10px) !important;
+}
+
+.section.bg-darker .roi-item i {
+    color: #00bfff !important;
+    font-size: 1.5rem;
+}
+
+.section.bg-darker .roi-item span {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* ============================================================
+   CTA SECTION (Final Call to Action)
+   ============================================================ */
+.section.bg-darker.text-center {
+    background: linear-gradient(135deg, 
+        #000000 0%, 
+        #003d66 50%, 
+        #00bfff 100%) !important;
+    text-align: center;
+}
+
+.section.bg-darker.text-center h2 {
+    color: #ffffff !important;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+}
+
+.section.bg-darker.text-center .section-subtitle {
+    color: #e0f2ff !important;
+}
+
+/* CTA Buttons */
+.section.bg-darker.text-center .btn-primary {
+    background: #ffffff !important;
+    color: #000000 !important;
+    border: 2px solid #ffffff !important;
+    font-weight: 700 !important;
+    padding: 1rem 2.5rem !important;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.section.bg-darker.text-center .btn-primary:hover {
+    background: #00bfff !important;
+    color: #ffffff !important;
+    border-color: #00bfff !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 30px rgba(0, 191, 255, 0.6) !important;
+}
+
+.section.bg-darker.text-center .btn-secondary {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 2px solid #ffffff !important;
+    font-weight: 700 !important;
+    padding: 1rem 2.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.section.bg-darker.text-center .btn-secondary:hover {
+    background: #ffffff !important;
+    color: #000000 !important;
+    transform: translateY(-3px) !important;
+}
+
+/* ============================================================
+   FOOTER - Branded
+   ============================================================ */
+.footer {
+    background: linear-gradient(135deg, 
+        #000000 0%, 
+        #001a33 100%) !important;
+    border-top: 3px solid #00bfff;
+    color: #ffffff !important;
+}
+
+.footer h3, .footer h4 {
+    color: #ffffff !important;
+}
+
+.footer h3 span {
+    color: #00bfff !important;
+}
+
+.footer a {
+    color: #87CEEB !important;
+    transition: color 0.3s ease;
+}
+
+.footer a:hover {
+    color: #ffffff !important;
+}
+
+.footer .contact-info i {
+    color: #00bfff !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(0, 191, 255, 0.3);
+    color: #87CEEB !important;
+}
+
+/* ============================================================
+   MOBILE OPTIMIZATION
+   ============================================================ */
+@media (max-width: 768px) {
+    .section.bg-dark {
+        background: #f0f8ff !important;
+    }
+    .section.bg-darker {
+        background: #001a33 !important;
+    }
+}
