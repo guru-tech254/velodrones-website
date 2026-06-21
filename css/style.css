@@ -1220,7 +1220,7 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
             rgba(0, 0, 0, 0.8) 0%, 
             rgba(0, 123, 255, 0.5) 50%, 
             rgba(135, 206, 235, 0.6) 100%),
-            url('../assets/images/mobile-hero-bg.jpg') center/cover no-repeat fixed;
+            url('../assets/images/mobile-hero-bg.jpeg') center/cover no-repeat fixed;
     }
     
     /* Ensure overlay still works on mobile */
