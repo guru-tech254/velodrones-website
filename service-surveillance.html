@@ -10,27 +10,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Reuse the exact same inline styles from service-inspection.html here */
         .service-hero { background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%); padding: 10rem 0 5rem; text-align: center; position: relative; overflow: hidden; border-bottom: 2px solid rgba(0, 191, 255, 0.3); }
         .service-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 40%, rgba(0, 191, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(135, 206, 235, 0.1) 0%, transparent 50%); pointer-events: none; }
         .service-hero .container { position: relative; z-index: 1; }
         .service-icon-large { font-size: 4rem; color: #00bfff; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); }
         .service-hero h1 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5), 0 0 60px rgba(0, 191, 255, 0.3); font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
         .service-hero p { color: #b8d4e8; font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        .hero-image-showcase { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .showcase-image { border-radius: 12px; overflow: hidden; border: 2px solid rgba(0, 191, 255, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.4s ease; height: 200px; }
+        .showcase-image:hover { transform: translateY(-8px); border-color: rgba(0, 191, 255, 0.8); box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3); }
+        .showcase-image img { width: 100%; height: 100%; object-fit: cover; }
+        .showcase-image.large { grid-column: span 2; height: 200px; }
         .service-content { background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%); padding: 5rem 0; position: relative; }
         .service-content::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 30%, rgba(0, 191, 255, 0.08) 0%, transparent 50%); pointer-events: none; }
         .service-content .container { position: relative; z-index: 1; }
+        .value-prop { background: rgba(0, 29, 61, 0.6); border: 1px solid rgba(0, 191, 255, 0.3); border-radius: 16px; padding: 3rem; margin: 3rem 0; backdrop-filter: blur(10px); }
+        .value-prop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+        .value-stat { text-align: center; padding: 1.5rem; }
+        .value-stat-number { font-size: 3rem; font-weight: 800; color: #00bfff; display: block; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(0, 191, 255, 0.5); }
+        .value-stat-label { color: #b8d4e8; font-size: 1rem; font-weight: 500; }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
         .service-feature { background: rgba(0, 29, 61, 0.6); border: 1px solid rgba(0, 191, 255, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); transition: all 0.4s ease; }
         .service-feature:hover { background: rgba(0, 53, 102, 0.7); border-color: rgba(0, 191, 255, 0.5); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.2); }
         .service-feature i { color: #00bfff; font-size: 2rem; margin-bottom: 1rem; }
         .service-feature h3 { color: #ffffff; font-size: 1.3rem; margin-bottom: 0.8rem; }
         .service-feature p { color: #b8d4e8; line-height: 1.7; }
+        .gallery-section { margin: 4rem 0; }
+        .gallery-section h2 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .gallery-item { border-radius: 12px; overflow: hidden; border: 2px solid rgba(0, 191, 255, 0.2); transition: all 0.4s ease; position: relative; }
+        .gallery-item:hover { border-color: rgba(0, 191, 255, 0.6); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.25); }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0, 8, 20, 0.95), transparent); color: #ffffff; padding: 1.5rem 1rem 1rem; font-size: 0.9rem; font-weight: 600; }
         .service-details h2 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); font-size: 2rem; margin: 3rem 0 1.5rem; }
         .service-details p { color: #b8d4e8; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
         .service-details ul { list-style: none; padding: 0; margin: 2rem 0; }
         .service-details ul li { color: #b8d4e8; padding: 0.8rem 0 0.8rem 2rem; position: relative; font-size: 1.05rem; border-bottom: 1px solid rgba(0, 191, 255, 0.1); }
         .service-details ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #00d484; position: absolute; left: 0; top: 0.8rem; }
+        .tech-showcase { background: rgba(0, 191, 255, 0.05); border: 1px solid rgba(0, 191, 255, 0.2); border-radius: 16px; padding: 3rem; margin: 3rem 0; }
+        .tech-showcase h3 { color: #87CEEB; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .tech-item { text-align: center; padding: 1.5rem; }
+        .tech-item i { font-size: 2.5rem; color: #00bfff; margin-bottom: 1rem; }
+        .tech-item h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .tech-item p { color: #b8d4e8; font-size: 0.95rem; }
         .cta-section { background: linear-gradient(135deg, #000814 0%, #001d3d 40%, #003566 70%, #00bfff 100%); padding: 6rem 0; text-align: center; }
         .cta-section h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-section p { color: #e0f2ff; font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
@@ -38,7 +62,7 @@
         .btn-primary:hover { background: #ffffff; color: #000000; border-color: #ffffff; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5); }
         .btn-secondary { background: transparent; color: #ffffff; border: 2px solid rgba(255, 255, 255, 0.4); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-transform: uppercase; text-decoration: none; display: inline-block; margin-left: 1rem; transition: all 0.3s ease; }
         .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: #00bfff; color: #00bfff; transform: translateY(-3px); }
-        @media (max-width: 768px) { .service-hero { padding: 8rem 0 3rem; } .service-hero h1 { font-size: 2rem; } .service-details h2 { font-size: 1.6rem; } .btn-secondary { margin-left: 0; margin-top: 1rem; } }
+        @media (max-width: 768px) { .service-hero { padding: 8rem 0 3rem; } .service-hero h1 { font-size: 2rem; } .service-details h2 { font-size: 1.6rem; } .btn-secondary { margin-left: 0; margin-top: 1rem; } .hero-image-showcase { grid-template-columns: 1fr; } .showcase-image.large { grid-column: span 1; } .value-prop-grid { grid-template-columns: 1fr; } .gallery-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -61,38 +85,69 @@
         <div class="container">
             <i class="fas fa-shield-alt service-icon-large"></i>
             <h1>Aerial Surveillance</h1>
-            <p>Real-time and scheduled aerial monitoring for large-scale sites, events, and critical perimeter security. We provide persistent situational awareness from above, enhancing safety and operational control without ground-based blind spots.</p>
+            <p>Eyes in the sky. Real-time intelligence when it matters most. We provide persistent situational awareness that ground-based systems can't match.</p>
+            <div class="hero-image-showcase">
+                <div class="showcase-image large">
+                    <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=600&auto=format" alt="Drone surveillance">
+                </div>
+                <div class="showcase-image">
+                    <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=400&auto=format" alt="Security monitoring">
+                </div>
+                <div class="showcase-image">
+                    <img src="https://images.unsplash.com/photo-1516216628259-94a38e6107e5?w=400&auto=format" alt="Night surveillance">
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="service-content">
         <div class="container">
+            <div class="value-prop">
+                <h2 style="color: #87CEEB; font-size: 2rem; text-align: center; margin-bottom: 0.5rem;">The Surveillance Advantage</h2>
+                <p style="color: #b8d4e8; text-align: center; font-size: 1.1rem;">One drone replaces twenty ground patrols</p>
+                <div class="value-prop-grid">
+                    <div class="value-stat"><span class="value-stat-number">24/7</span><span class="value-stat-label">Continuous Monitoring</span></div>
+                    <div class="value-stat"><span class="value-stat-number">Live</span><span class="value-stat-label">HD Video Streaming</span></div>
+                    <div class="value-stat"><span class="value-stat-number">20x</span><span class="value-stat-label">Coverage vs Ground Patrols</span></div>
+                </div>
+            </div>
+
             <div class="service-details">
                 <h2>Persistent Eyes in the Sky</h2>
-                <p>Ground-based security cameras have limited range and fixed perspectives. Manned patrols are slow and can't cover vast areas effectively. Velodrones' aerial surveillance solutions provide dynamic, real-time visibility over entire facilities, event venues, or critical infrastructure corridors.</p>
-                <p>Using long-endurance UAV platforms equipped with EO/IR (Electro-Optical/Infra-Red) gimbals and live video downlink systems, we deliver continuous aerial coverage that enhances existing security operations. Our pilots can respond instantly to incidents, track moving targets, and provide command centers with actionable aerial intelligence.</p>
+                <p style="font-size: 1.15rem; line-height: 1.9;">Ground-based security cameras have limited range and fixed perspectives. Manned patrols are slow, expensive, and can't cover vast areas effectively. Blind spots become vulnerabilities — and vulnerabilities become incidents.</p>
+                <p style="font-size: 1.15rem; line-height: 1.9;"><strong>Velodrones' aerial surveillance solutions provide dynamic, real-time visibility</strong> over entire facilities, event venues, or critical infrastructure corridors. Using long-endurance UAV platforms equipped with EO/IR (Electro-Optical/Infra-Red) gimbals and live video downlink systems, we deliver continuous aerial coverage that enhances existing security operations. Our pilots respond instantly to incidents, track moving targets, and provide command centers with actionable aerial intelligence — day or night.</p>
+            </div>
+
+            <div class="tech-showcase">
+                <h3><i class="fas fa-video" style="margin-right: 0.8rem;"></i>Advanced Surveillance Technology</h3>
+                <div class="tech-grid">
+                    <div class="tech-item"><i class="fas fa-broadcast-tower"></i><h4>Live Streaming</h4><p>Real-time HD video downlink</p></div>
+                    <div class="tech-item"><i class="fas fa-temperature-low"></i><h4>Thermal Imaging</h4><p>24/7 night operations</p></div>
+                    <div class="tech-item"><i class="fas fa-search"></i><h4>30x Optical Zoom</h4><p>Identify from distance</p></div>
+                    <div class="tech-item"><i class="fas fa-brain"></i><h4>AI Detection</h4><p>Automated anomaly alerts</p></div>
+                </div>
             </div>
 
             <div class="service-grid">
                 <div class="service-feature">
                     <i class="fas fa-video"></i>
                     <h3>Live Video Streaming</h3>
-                    <p>Real-time HD video feed transmitted directly to your command center or mobile devices for immediate situational awareness.</p>
+                    <p>Real-time HD video feed transmitted directly to your command center or mobile devices for immediate situational awareness and rapid response coordination.</p>
                 </div>
                 <div class="service-feature">
                     <i class="fas fa-fire"></i>
                     <h3>Thermal Night Operations</h3>
-                    <p>Infrared imaging for 24/7 surveillance, detecting intruders, hotspots, and anomalies invisible to the naked eye.</p>
+                    <p>Infrared imaging for 24/7 surveillance, detecting intruders, hotspots, and anomalies invisible to the naked eye — even in complete darkness.</p>
                 </div>
                 <div class="service-feature">
                     <i class="fas fa-users"></i>
                     <h3>Event Crowd Monitoring</h3>
-                    <p>Overhead crowd density analysis, flow management, and emergency response coordination for large public gatherings.</p>
+                    <p>Overhead crowd density analysis, flow management, and emergency response coordination for large public gatherings, concerts, and sporting events.</p>
                 </div>
                 <div class="service-feature">
                     <i class="fas fa-warehouse"></i>
                     <h3>Perimeter Security</h3>
-                    <p>Automated patrol routes along facility boundaries with AI-powered anomaly detection and instant alert notifications.</p>
+                    <p>Automated patrol routes along facility boundaries with AI-powered anomaly detection and instant alert notifications to your security team.</p>
                 </div>
                 <div class="service-feature">
                     <i class="fas fa-search"></i>
@@ -102,31 +157,54 @@
                 <div class="service-feature">
                     <i class="fas fa-clipboard-check"></i>
                     <h3>Compliance Monitoring</h3>
-                    <p>Documented aerial verification of site conditions, safety protocol adherence, and environmental compliance.</p>
+                    <p>Documented aerial verification of site conditions, safety protocol adherence, and environmental compliance with timestamped evidence.</p>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="margin-right: 0.8rem;"></i>Surveillance Operations</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=500&auto=format" alt="Drone surveillance">
+                        <div class="gallery-caption">Aerial Security Patrol</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?w=500&auto=format" alt="Monitoring">
+                        <div class="gallery-caption">Command Center Integration</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1516216628259-94a38e6107e5?w=500&auto=format" alt="Thermal">
+                        <div class="gallery-caption">Thermal Night Vision</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1558403194-611308249627?w=500&auto=format" alt="Event monitoring">
+                        <div class="gallery-caption">Event Crowd Management</div>
+                    </div>
                 </div>
             </div>
 
             <h2>Surveillance Capabilities</h2>
             <ul>
-                <li>Live HD video streaming with low-latency downlink</li>
-                <li>Thermal/IR imaging for night and low-visibility operations</li>
-                <li>Zoom capabilities for detailed identification at distance</li>
-                <li>GPS-tagged incident recording and timestamped evidence</li>
-                <li>Automated waypoint patrols for consistent coverage</li>
-                <li>Integration with existing security command centers</li>
-                <li>Post-flight analysis reports and annotated footage</li>
+                <li><strong>Live HD video streaming</strong> with low-latency downlink to your command center</li>
+                <li><strong>Thermal/IR imaging</strong> for night and low-visibility operations</li>
+                <li><strong>30x optical zoom</strong> for detailed identification at distance</li>
+                <li><strong>GPS-tagged incident recording</strong> and timestamped evidence for legal proceedings</li>
+                <li><strong>Automated waypoint patrols</strong> for consistent, repeatable coverage</li>
+                <li><strong>Integration with existing security command centers</strong> — works with your current systems</li>
+                <li><strong>Post-flight analysis reports</strong> and annotated footage for incident review</li>
             </ul>
 
-            <h2>The Surveillance Advantage</h2>
-            <p>Aerial surveillance provides a force multiplier for your security team. One drone can monitor an area equivalent to <strong>20 ground patrol units</strong>, responding faster and seeing more. Whether protecting critical infrastructure, managing large events, or supporting emergency response, our aerial surveillance solutions give you the upper hand with unmatched situational awareness.</p>
+            <h2>The Force Multiplier</h2>
+            <p style="font-size: 1.15rem; line-height: 1.9;">Aerial surveillance provides a <strong>force multiplier</strong> for your security team. One drone can monitor an area equivalent to <strong>20 ground patrol units</strong>, responding faster and seeing more. Whether protecting critical infrastructure, managing large events, or supporting emergency response, our aerial surveillance solutions give you the upper hand with unmatched situational awareness.</p>
+            <p style="font-size: 1.15rem; line-height: 1.9; margin-top: 1.5rem; padding: 2rem; background: rgba(0, 191, 255, 0.05); border-left: 4px solid #00bfff; border-radius: 8px;"><strong style="color: #87CEEB;">The bottom line:</strong> You can't protect what you can't see. Aerial surveillance eliminates blind spots, deters criminal activity, and provides the intelligence your security team needs to prevent incidents — not just respond to them.</p>
         </div>
     </section>
 
     <section class="cta-section">
         <div class="container">
             <h2>Enhance Your Security Posture</h2>
-            <p>Get persistent aerial surveillance that covers what ground-based systems miss. Let's design your solution.</p>
-            <a href="contact.html" class="btn-primary">Request Surveillance Demo</a>
+            <p>Get persistent aerial surveillance that covers what ground-based systems miss. See everything. Miss nothing.</p>
+            <a href="contact.html" class="btn-primary">Request Surveillance Demo <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
             <a href="portfolio.html" class="btn-secondary">View Surveillance Cases</a>
         </div>
     </section>
@@ -134,31 +212,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>VELO<span>DRONES</span></h3>
-                    <p>Premium aerial intelligence and geospatial solutions helping organizations operate more efficiently, safely, and profitably.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#services">Our Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-envelope"></i><a href="mailto:velodronesag@gmail.com">velodronesag@gmail.com</a></li>
-                        <li><i class="fas fa-phone"></i><a href="tel:+254115874187">+254 115 874 187</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></li>
-                    </ul>
-                </div>
+                <div class="footer-col"><h3>VELO<span>DRONES</span></h3><p>Premium aerial intelligence and geospatial solutions helping organizations operate more efficiently, safely, and profitably.</p></div>
+                <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html#services">Our Services</a></li><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-col"><h4>Contact Info</h4><ul class="contact-info"><li><i class="fas fa-envelope"></i><a href="mailto:velodronesag@gmail.com">velodronesag@gmail.com</a></li><li><i class="fas fa-phone"></i><a href="tel:+254115874187">+254 115 874 187</a></li><li><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Velodrones. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Velodrones. All Rights Reserved.</p></div>
         </div>
     </footer>
     <script src="js/script.js"></script>

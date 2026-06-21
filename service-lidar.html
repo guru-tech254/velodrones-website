@@ -10,27 +10,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* Reuse the exact same inline styles from service-inspection.html here */
         .service-hero { background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%); padding: 10rem 0 5rem; text-align: center; position: relative; overflow: hidden; border-bottom: 2px solid rgba(0, 191, 255, 0.3); }
         .service-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 40%, rgba(0, 191, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(135, 206, 235, 0.1) 0%, transparent 50%); pointer-events: none; }
         .service-hero .container { position: relative; z-index: 1; }
         .service-icon-large { font-size: 4rem; color: #00bfff; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); }
         .service-hero h1 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5), 0 0 60px rgba(0, 191, 255, 0.3); font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
         .service-hero p { color: #b8d4e8; font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        .hero-image-showcase { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .showcase-image { border-radius: 12px; overflow: hidden; border: 2px solid rgba(0, 191, 255, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.4s ease; height: 200px; }
+        .showcase-image:hover { transform: translateY(-8px); border-color: rgba(0, 191, 255, 0.8); box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3); }
+        .showcase-image img { width: 100%; height: 100%; object-fit: cover; }
+        .showcase-image.large { grid-column: span 2; height: 200px; }
         .service-content { background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%); padding: 5rem 0; position: relative; }
         .service-content::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 30%, rgba(0, 191, 255, 0.08) 0%, transparent 50%); pointer-events: none; }
         .service-content .container { position: relative; z-index: 1; }
+        .value-prop { background: rgba(0, 29, 61, 0.6); border: 1px solid rgba(0, 191, 255, 0.3); border-radius: 16px; padding: 3rem; margin: 3rem 0; backdrop-filter: blur(10px); }
+        .value-prop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+        .value-stat { text-align: center; padding: 1.5rem; }
+        .value-stat-number { font-size: 3rem; font-weight: 800; color: #00bfff; display: block; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(0, 191, 255, 0.5); }
+        .value-stat-label { color: #b8d4e8; font-size: 1rem; font-weight: 500; }
         .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
         .service-feature { background: rgba(0, 29, 61, 0.6); border: 1px solid rgba(0, 191, 255, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); transition: all 0.4s ease; }
         .service-feature:hover { background: rgba(0, 53, 102, 0.7); border-color: rgba(0, 191, 255, 0.5); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.2); }
         .service-feature i { color: #00bfff; font-size: 2rem; margin-bottom: 1rem; }
         .service-feature h3 { color: #ffffff; font-size: 1.3rem; margin-bottom: 0.8rem; }
         .service-feature p { color: #b8d4e8; line-height: 1.7; }
+        .gallery-section { margin: 4rem 0; }
+        .gallery-section h2 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .gallery-item { border-radius: 12px; overflow: hidden; border: 2px solid rgba(0, 191, 255, 0.2); transition: all 0.4s ease; position: relative; }
+        .gallery-item:hover { border-color: rgba(0, 191, 255, 0.6); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.25); }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0, 8, 20, 0.95), transparent); color: #ffffff; padding: 1.5rem 1rem 1rem; font-size: 0.9rem; font-weight: 600; }
         .service-details h2 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); font-size: 2rem; margin: 3rem 0 1.5rem; }
         .service-details p { color: #b8d4e8; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
         .service-details ul { list-style: none; padding: 0; margin: 2rem 0; }
         .service-details ul li { color: #b8d4e8; padding: 0.8rem 0 0.8rem 2rem; position: relative; font-size: 1.05rem; border-bottom: 1px solid rgba(0, 191, 255, 0.1); }
         .service-details ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #00d484; position: absolute; left: 0; top: 0.8rem; }
+        .tech-showcase { background: rgba(0, 191, 255, 0.05); border: 1px solid rgba(0, 191, 255, 0.2); border-radius: 16px; padding: 3rem; margin: 3rem 0; }
+        .tech-showcase h3 { color: #87CEEB; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .tech-item { text-align: center; padding: 1.5rem; }
+        .tech-item i { font-size: 2.5rem; color: #00bfff; margin-bottom: 1rem; }
+        .tech-item h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .tech-item p { color: #b8d4e8; font-size: 0.95rem; }
         .cta-section { background: linear-gradient(135deg, #000814 0%, #001d3d 40%, #003566 70%, #00bfff 100%); padding: 6rem 0; text-align: center; }
         .cta-section h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-section p { color: #e0f2ff; font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
@@ -38,7 +62,7 @@
         .btn-primary:hover { background: #ffffff; color: #000000; border-color: #ffffff; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5); }
         .btn-secondary { background: transparent; color: #ffffff; border: 2px solid rgba(255, 255, 255, 0.4); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-transform: uppercase; text-decoration: none; display: inline-block; margin-left: 1rem; transition: all 0.3s ease; }
         .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: #00bfff; color: #00bfff; transform: translateY(-3px); }
-        @media (max-width: 768px) { .service-hero { padding: 8rem 0 3rem; } .service-hero h1 { font-size: 2rem; } .service-details h2 { font-size: 1.6rem; } .btn-secondary { margin-left: 0; margin-top: 1rem; } }
+        @media (max-width: 768px) { .service-hero { padding: 8rem 0 3rem; } .service-hero h1 { font-size: 2rem; } .service-details h2 { font-size: 1.6rem; } .btn-secondary { margin-left: 0; margin-top: 1rem; } .hero-image-showcase { grid-template-columns: 1fr; } .showcase-image.large { grid-column: span 1; } .value-prop-grid { grid-template-columns: 1fr; } .gallery-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
@@ -61,16 +85,47 @@
         <div class="container">
             <i class="fas fa-cube service-icon-large"></i>
             <h1>LiDAR Surveying</h1>
-            <p>Penetrating vegetation and capturing complex structures with millions of precise, high-density data points. Our airborne LiDAR systems deliver true ground elevation even under dense canopy where optical photogrammetry fails.</p>
+            <p>See through vegetation. Capture what cameras can't. Our airborne LiDAR reveals the true ground beneath dense canopy with unmatched precision.</p>
+            <div class="hero-image-showcase">
+                <div class="showcase-image large">
+                    <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=600&auto=format" alt="LiDAR forest survey">
+                </div>
+                <div class="showcase-image">
+                    <img src="https://images.unsplash.com/photo-1620641788421-7a1c342600e7?w=400&auto=format" alt="Point cloud">
+                </div>
+                <div class="showcase-image">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&auto=format" alt="3D terrain">
+                </div>
+            </div>
         </div>
     </section>
 
     <section class="service-content">
         <div class="container">
+            <div class="value-prop">
+                <h2 style="color: #87CEEB; font-size: 2rem; text-align: center; margin-bottom: 0.5rem;">Why LiDAR Matters</h2>
+                <p style="color: #b8d4e8; text-align: center; font-size: 1.1rem;">The only technology that sees through vegetation to true ground</p>
+                <div class="value-prop-grid">
+                    <div class="value-stat"><span class="value-stat-number">500K</span><span class="value-stat-label">Points Per Second</span></div>
+                    <div class="value-stat"><span class="value-stat-number">5cm</span><span class="value-stat-label">Vertical Accuracy</span></div>
+                    <div class="value-stat"><span class="value-stat-number">100%</span><span class="value-stat-label">Canopy Penetration</span></div>
+                </div>
+            </div>
+
             <div class="service-details">
-                <h2>Seeing Through the Canopy</h2>
-                <p>Optical cameras can only see what's visible from above. When dense vegetation, power lines, or complex infrastructure obscure the ground, traditional mapping falls short. Velodrones' LiDAR (Light Detection and Ranging) technology uses laser pulses to penetrate gaps in foliage and capture the true bare-earth surface beneath.</p>
-                <p>Equipped with multi-return laser scanners and integrated IMU/GNSS systems, our drones capture up to 500,000 points per second with centimeter-level precision. The result is a comprehensive 3D point cloud that reveals terrain, structures, and vegetation structure simultaneously.</p>
+                <h2>Seeing What Others Miss</h2>
+                <p style="font-size: 1.15rem; line-height: 1.9;">Optical cameras can only see what's visible from above. When dense vegetation, power lines, or complex infrastructure obscure the ground, traditional photogrammetry fails — leaving you with incomplete data and costly blind spots.</p>
+                <p style="font-size: 1.15rem; line-height: 1.9;"><strong>Velodrones' LiDAR (Light Detection and Ranging) technology changes everything.</strong> Our airborne laser scanners fire 500,000 pulses per second, penetrating gaps in foliage to capture the true bare-earth surface beneath. The result is a comprehensive 3D point cloud that reveals terrain, structures, and vegetation structure simultaneously — with 5cm vertical accuracy that meets the strictest engineering standards.</p>
+            </div>
+
+            <div class="tech-showcase">
+                <h3><i class="fas fa-laser-pointer" style="margin-right: 0.8rem;"></i>Advanced LiDAR Technology</h3>
+                <div class="tech-grid">
+                    <div class="tech-item"><i class="fas fa-bullseye"></i><h4>Multi-Return Laser</h4><p>Penetrates dense canopy</p></div>
+                    <div class="tech-item"><i class="fas fa-satellite"></i><h4>RTK/IMU Integration</h4><p>Centimeter positioning</p></div>
+                    <div class="tech-item"><i class="fas fa-filter"></i><h4>Auto-Classification</h4><p>Ground/vegetation/building</p></div>
+                    <div class="tech-item"><i class="fas fa-database"></i><h4>Massive Point Clouds</h4><p>Millions of data points</p></div>
+                </div>
             </div>
 
             <div class="service-grid">
@@ -106,27 +161,50 @@
                 </div>
             </div>
 
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="margin-right: 0.8rem;"></i>LiDAR in Action</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=500&auto=format" alt="Forest LiDAR">
+                        <div class="gallery-caption">Forest Canopy Penetration</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1620641788421-7a1c342600e7?w=500&auto=format" alt="Point cloud">
+                        <div class="gallery-caption">3D Point Cloud</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=500&auto=format" alt="Terrain model">
+                        <div class="gallery-caption">Bare-Earth DTM</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1558403194-611308249627?w=500&auto=format" alt="Corridor mapping">
+                        <div class="gallery-caption">Power Line Corridor</div>
+                    </div>
+                </div>
+            </div>
+
             <h2>LiDAR Deliverables</h2>
             <ul>
-                <li>Classified 3D Point Clouds (Ground, Vegetation, Buildings, Power Lines)</li>
-                <li>Bare-Earth Digital Terrain Models (DTM)</li>
-                <li>Digital Surface Models (DSM) including all features</li>
-                <li>Canopy Height Models (CHM) for forestry applications</li>
-                <li>Contour lines and breaklines at specified intervals</li>
-                <li>Cross-sections and profile views for corridor projects</li>
-                <li>Vegetation encroachment reports with clearance violations</li>
+                <li><strong>Classified 3D Point Clouds</strong> (LAS/LAZ format) — automatically segmented into Ground, Vegetation, Buildings, and Power Lines</li>
+                <li><strong>Bare-Earth Digital Terrain Models (DTM)</strong> — accurate ground surface beneath all vegetation</li>
+                <li><strong>Digital Surface Models (DSM)</strong> — including all features (trees, buildings, infrastructure)</li>
+                <li><strong>Canopy Height Models (CHM)</strong> — for forestry applications and biomass estimation</li>
+                <li><strong>Contour lines and breaklines</strong> — at specified intervals for engineering design</li>
+                <li><strong>Cross-sections and profile views</strong> — for corridor projects and road design</li>
+                <li><strong>Vegetation encroachment reports</strong> — with clearance violations and risk assessments</li>
             </ul>
 
-            <h2>Why LiDAR Matters</h2>
-            <p>When accuracy under vegetation or in complex environments is non-negotiable, LiDAR is the only solution. Our airborne LiDAR surveys deliver <strong>5cm vertical accuracy</strong> across challenging terrain that would be impossible to survey from the ground. For utilities, transportation agencies, and engineering firms, this means safer designs, fewer surprises during construction, and significantly reduced project risk.</p>
+            <h2>Why LiDAR is Non-Negotiable</h2>
+            <p style="font-size: 1.15rem; line-height: 1.9;">When accuracy under vegetation or in complex environments is critical, LiDAR is the <strong>only</strong> solution. Our airborne LiDAR surveys deliver <strong>5cm vertical accuracy</strong> across challenging terrain that would be impossible to survey from the ground — saving you weeks of dangerous fieldwork and eliminating costly data gaps.</p>
+            <p style="font-size: 1.15rem; line-height: 1.9; margin-top: 1.5rem; padding: 2rem; background: rgba(0, 191, 255, 0.05); border-left: 4px solid #00bfff; border-radius: 8px;"><strong style="color: #87CEEB;">For utilities, transportation agencies, and engineering firms,</strong> this means safer designs, fewer surprises during construction, and significantly reduced project risk. One LiDAR survey prevents millions in change orders and delays.</p>
         </div>
     </section>
 
     <section class="cta-section">
         <div class="container">
             <h2>Need True Ground Elevation?</h2>
-            <p>Get through-the-canopy LiDAR data that photogrammetry can't provide. Let's scope your project.</p>
-            <a href="contact.html" class="btn-primary">Request LiDAR Survey</a>
+            <p>Get through-the-canopy LiDAR data that photogrammetry can't provide. Stop guessing what's under the trees — start knowing.</p>
+            <a href="contact.html" class="btn-primary">Request LiDAR Survey <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
             <a href="portfolio.html" class="btn-secondary">View LiDAR Projects</a>
         </div>
     </section>
@@ -134,31 +212,11 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-col">
-                    <h3>VELO<span>DRONES</span></h3>
-                    <p>Premium aerial intelligence and geospatial solutions helping organizations operate more efficiently, safely, and profitably.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html#services">Our Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-info">
-                        <li><i class="fas fa-envelope"></i><a href="mailto:velodronesag@gmail.com">velodronesag@gmail.com</a></li>
-                        <li><i class="fas fa-phone"></i><a href="tel:+254115874187">+254 115 874 187</a></li>
-                        <li><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></li>
-                    </ul>
-                </div>
+                <div class="footer-col"><h3>VELO<span>DRONES</span></h3><p>Premium aerial intelligence and geospatial solutions helping organizations operate more efficiently, safely, and profitably.</p></div>
+                <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html#services">Our Services</a></li><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-col"><h4>Contact Info</h4><ul class="contact-info"><li><i class="fas fa-envelope"></i><a href="mailto:velodronesag@gmail.com">velodronesag@gmail.com</a></li><li><i class="fas fa-phone"></i><a href="tel:+254115874187">+254 115 874 187</a></li><li><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></li></ul></div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Velodrones. All Rights Reserved.</p>
-            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Velodrones. All Rights Reserved.</p></div>
         </div>
     </footer>
     <script src="js/script.js"></script>
