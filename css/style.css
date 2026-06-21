@@ -985,3 +985,86 @@ h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
         display: none;
     }
 }
+
+
+
+
+/* Hero Section with Background Video - Adjusted Positioning */
+.hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 100px; /* Add top padding to account for navbar */
+}
+
+.hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    object-fit: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(5, 5, 5, 0.7) 0%, 
+        rgba(0, 123, 255, 0.3) 100%);
+    z-index: 1;
+}
+
+/* Ensure hero content is above video */
+.hero .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 900px;
+    padding: 2rem;
+    margin-top: -50px; /* Move content up slightly */
+}
+
+/* Add text shadows for better readability */
+.hero h1 {
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.8);
+    margin-bottom: 1.5rem;
+    font-size: 3rem; /* Adjust if needed */
+    line-height: 1.2;
+}
+
+.hero p {
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.8);
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .hero-video {
+        display: none;
+    }
+    .hero {
+        background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+        padding-top: 120px; /* More padding on mobile */
+    }
+    .hero-overlay {
+        display: none;
+    }
+    .hero .hero-content {
+        margin-top: 0;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+}
