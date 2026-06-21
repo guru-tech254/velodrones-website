@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Analytics & Insights | Velodrones</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .service-hero { background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%); padding: 10rem 0 5rem; text-align: center; position: relative; overflow: hidden; border-bottom: 2px solid rgba(0, 191, 255, 0.3); }
+        .service-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 30% 40%, rgba(0, 191, 255, 0.15) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(135, 206, 235, 0.1) 0%, transparent 50%); pointer-events: none; }
+        .service-hero .container { position: relative; z-index: 1; }
+        .service-icon-large { font-size: 4rem; color: #00bfff; margin-bottom: 1.5rem; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); }
+        .service-hero h1 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5), 0 0 60px rgba(0, 191, 255, 0.3); font-size: 3rem; font-weight: 800; margin-bottom: 1rem; }
+        .service-hero p { color: #b8d4e8; font-size: 1.2rem; max-width: 700px; margin: 0 auto; line-height: 1.7; }
+        .hero-image-showcase { margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1000px; margin-left: auto; margin-right: auto; }
+        .showcase-image { border-radius: 12px; overflow: hidden; border: 2px solid rgba(0, 191, 255, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); transition: all 0.4s ease; height: 200px; }
+        .showcase-image:hover { transform: translateY(-8px); border-color: rgba(0, 191, 255, 0.8); box-shadow: 0 20px 40px rgba(0, 191, 255, 0.3); }
+        .showcase-image img { width: 100%; height: 100%; object-fit: cover; }
+        .showcase-image.large { grid-column: span 2; height: 200px; }
+        .service-content { background: linear-gradient(135deg, #000814 0%, #001d3d 30%, #003566 60%, #001d3d 100%); padding: 5rem 0; position: relative; }
+        .service-content::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 30%, rgba(0, 191, 255, 0.08) 0%, transparent 50%); pointer-events: none; }
+        .service-content .container { position: relative; z-index: 1; }
+        .value-prop { background: rgba(0, 29, 61, 0.6); border: 1px solid rgba(0, 191, 255, 0.3); border-radius: 16px; padding: 3rem; margin: 3rem 0; backdrop-filter: blur(10px); }
+        .value-prop-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 2rem; }
+        .value-stat { text-align: center; padding: 1.5rem; }
+        .value-stat-number { font-size: 3rem; font-weight: 800; color: #00bfff; display: block; margin-bottom: 0.5rem; text-shadow: 0 0 20px rgba(0, 191, 255, 0.5); }
+        .value-stat-label { color: #b8d4e8; font-size: 1rem; font-weight: 500; }
+        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin: 3rem 0; }
+        .service-feature { background: rgba(0, 29, 61, 0.6); border: 1px solid rgba(0, 191, 255, 0.2); border-radius: 12px; padding: 2rem; backdrop-filter: blur(10px); transition: all 0.4s ease; }
+        .service-feature:hover { background: rgba(0, 53, 102, 0.7); border-color: rgba(0, 191, 255, 0.5); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.2); }
+        .service-feature i { color: #00bfff; font-size: 2rem; margin-bottom: 1rem; }
+        .service-feature h3 { color: #ffffff; font-size: 1.3rem; margin-bottom: 0.8rem; }
+        .service-feature p { color: #b8d4e8; line-height: 1.7; }
+        .gallery-section { margin: 4rem 0; }
+        .gallery-section h2 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); font-size: 2rem; margin-bottom: 2rem; text-align: center; }
+        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+        .gallery-item { border-radius: 12px; overflow: hidden; border: 2px solid rgba(0, 191, 255, 0.2); transition: all 0.4s ease; position: relative; }
+        .gallery-item:hover { border-color: rgba(0, 191, 255, 0.6); transform: translateY(-5px); box-shadow: 0 15px 35px rgba(0, 191, 255, 0.25); }
+        .gallery-item img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.5s ease; }
+        .gallery-item:hover img { transform: scale(1.1); }
+        .gallery-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0, 8, 20, 0.95), transparent); color: #ffffff; padding: 1.5rem 1rem 1rem; font-size: 0.9rem; font-weight: 600; }
+        .service-details h2 { color: #87CEEB; text-shadow: 0 0 30px rgba(0, 191, 255, 0.5); font-size: 2rem; margin: 3rem 0 1.5rem; }
+        .service-details p { color: #b8d4e8; font-size: 1.1rem; line-height: 1.8; margin-bottom: 1.5rem; }
+        .service-details ul { list-style: none; padding: 0; margin: 2rem 0; }
+        .service-details ul li { color: #b8d4e8; padding: 0.8rem 0 0.8rem 2rem; position: relative; font-size: 1.05rem; border-bottom: 1px solid rgba(0, 191, 255, 0.1); }
+        .service-details ul li::before { content: '\f00c'; font-family: 'Font Awesome 6 Free'; font-weight: 900; color: #00d484; position: absolute; left: 0; top: 0.8rem; }
+        .tech-showcase { background: rgba(0, 191, 255, 0.05); border: 1px solid rgba(0, 191, 255, 0.2); border-radius: 16px; padding: 3rem; margin: 3rem 0; }
+        .tech-showcase h3 { color: #87CEEB; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .tech-item { text-align: center; padding: 1.5rem; }
+        .tech-item i { font-size: 2.5rem; color: #00bfff; margin-bottom: 1rem; }
+        .tech-item h4 { color: #ffffff; font-size: 1.1rem; margin-bottom: 0.5rem; }
+        .tech-item p { color: #b8d4e8; font-size: 0.95rem; }
+        .cta-section { background: linear-gradient(135deg, #000814 0%, #001d3d 40%, #003566 70%, #00bfff 100%); padding: 6rem 0; text-align: center; }
+        .cta-section h2 { color: #ffffff; font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-section p { color: #e0f2ff; font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; }
+        .btn-primary { background: #00bfff; color: #000000; border: 2px solid #00bfff; padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-transform: uppercase; text-decoration: none; display: inline-block; transition: all 0.3s ease; box-shadow: 0 4px 20px rgba(0, 191, 255, 0.4); }
+        .btn-primary:hover { background: #ffffff; color: #000000; border-color: #ffffff; transform: translateY(-3px); box-shadow: 0 8px 30px rgba(255, 255, 255, 0.5); }
+        .btn-secondary { background: transparent; color: #ffffff; border: 2px solid rgba(255, 255, 255, 0.4); padding: 1rem 2.5rem; font-size: 1.1rem; font-weight: 700; border-radius: 8px; text-transform: uppercase; text-decoration: none; display: inline-block; margin-left: 1rem; transition: all 0.3s ease; }
+        .btn-secondary:hover { background: rgba(255, 255, 255, 0.1); border-color: #00bfff; color: #00bfff; transform: translateY(-3px); }
+        @media (max-width: 768px) { .service-hero { padding: 8rem 0 3rem; } .service-hero h1 { font-size: 2rem; } .service-details h2 { font-size: 1.6rem; } .btn-secondary { margin-left: 0; margin-top: 1rem; } .hero-image-showcase { grid-template-columns: 1fr; } .showcase-image.large { grid-column: span 1; } .value-prop-grid { grid-template-columns: 1fr; } .gallery-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="logo"><a href="index.html">VELO<span>DRONES</span></a></div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="index.html#industries">Industries</a></li>
+                <li><a href="contact.html" class="btn btn-primary">Contact</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        </nav>
+    </header>
+
+    <section class="service-hero">
+        <div class="container">
+            <i class="fas fa-chart-line service-icon-large"></i>
+            <h1>Data Analytics & Insights</h1>
+            <p>Raw data to decisions. Actionable insights, not just pretty pictures. We transform complex geospatial data into executive-ready intelligence.</p>
+            <div class="hero-image-showcase">
+                <div class="showcase-image large">
+                    <img src="assets/images/gis-mapping-laptop.jpg" alt="GIS data analysis">
+                </div>
+                <div class="showcase-image">
+                    <img src="assets/images/analytics-dashboard.jpg" alt="Analytics dashboard">
+                </div>
+                <div class="showcase-image">
+                    <img src="assets/images/data-charts-reports.jpg" alt="Data visualization">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-content">
+        <div class="container">
+            <div class="value-prop">
+                <h2 style="color: #87CEEB; font-size: 2rem; text-align: center; margin-bottom: 0.5rem;">Why Analytics Matter</h2>
+                <p style="color: #b8d4e8; text-align: center; font-size: 1.1rem;">Data without interpretation is just noise</p>
+                <div class="value-prop-grid">
+                    <div class="value-stat"><span class="value-stat-number">AI</span><span class="value-stat-label">Powered Analysis</span></div>
+                    <div class="value-stat"><span class="value-stat-number">100%</span><span class="value-stat-label">Actionable Insights</span></div>
+                    <div class="value-stat"><span class="value-stat-number">24h</span><span class="value-stat-label">Rapid Turnaround</span></div>
+                </div>
+            </div>
+
+            <div class="service-details">
+                <h2>From Raw Data to Boardroom Intelligence</h2>
+                <p style="font-size: 1.15rem; line-height: 1.9;">A million data points mean nothing without interpretation. You don't need more data — you need <strong>clarity</strong>. You need to know what the data means, what actions to take, and what risks to mitigate.</p>
+                <p style="font-size: 1.15rem; line-height: 1.9;"><strong>Velodrones transforms raw geospatial captures into executive-ready dashboards, predictive maintenance reports, and compliance documentation.</strong> We combine advanced analytics, machine learning, and domain expertise to turn your aerial investment into boardroom-ready intelligence that drives real business outcomes.</p>
+            </div>
+
+            <div class="tech-showcase">
+                <h3><i class="fas fa-brain" style="margin-right: 0.8rem;"></i>Analytics Technology Stack</h3>
+                <div class="tech-grid">
+                    <div class="tech-item"><i class="fas fa-robot"></i><h4>Machine Learning</h4><p>AI-powered defect detection</p></div>
+                    <div class="tech-item"><i class="fas fa-database"></i><h4>Big Data Processing</h4><p>Handle massive datasets</p></div>
+                    <div class="tech-item"><i class="fas fa-chart-bar"></i><h4>Predictive Analytics</h4><p>Forecast trends & failures</p></div>
+                    <div class="tech-item"><i class="fas fa-mobile-alt"></i><h4>Interactive Dashboards</h4><p>Real-time data visualization</p></div>
+                </div>
+            </div>
+
+            <div class="service-grid">
+                <div class="service-feature">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Predictive Maintenance</h3>
+                    <p>AI-powered analysis identifies patterns and anomalies that predict equipment failures before they occur, enabling proactive maintenance scheduling.</p>
+                </div>
+                <div class="service-feature">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <h3>Performance Dashboards</h3>
+                    <p>Real-time KPI tracking and visualization dashboards that give executives instant visibility into asset health and operational efficiency.</p>
+                </div>
+                <div class="service-feature">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h3>Compliance Reporting</h3>
+                    <p>Automated generation of regulatory compliance reports with audit trails, timestamped evidence, and standardized documentation.</p>
+                </div>
+                <div class="service-feature">
+                    <i class="fas fa-search-dollar"></i>
+                    <h3>Cost-Benefit Analysis</h3>
+                    <p>Quantify ROI from drone inspections with detailed cost-benefit models showing avoided downtime, extended asset life, and risk reduction.</p>
+                </div>
+                <div class="service-feature">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>Trend Analysis</h3>
+                    <p>Multi-temporal analysis tracking changes over time — degradation rates, vegetation growth, erosion patterns, and construction progress.</p>
+                </div>
+                <div class="service-feature">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>GIS Integration</h3>
+                    <p>Seamless integration with ArcGIS, QGIS, and other GIS platforms for spatial analysis, overlay operations, and geodatabase management.</p>
+                </div>
+            </div>
+
+            <div class="gallery-section">
+                <h2><i class="fas fa-images" style="margin-right: 0.8rem;"></i>Analytics in Action</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="assets/images/gis-mapping-laptop.jpg" alt="GIS analysis">
+                        <div class="gallery-caption">Geospatial Data Processing</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/social-data-analytics.jpg" alt="Data visualization">
+                        <div class="gallery-caption">Interactive Analytics Dashboards</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/analytics-dashboard.jpg" alt="Business intelligence">
+                        <div class="gallery-caption">Executive Reporting</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/3d-terrain-analysis.jpg" alt="3D terrain model">
+                        <div class="gallery-caption">Advanced 3D Terrain Analysis</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="assets/images/data-charts-reports.jpg" alt="Data reports">
+                        <div class="gallery-caption">Comprehensive Analytics Reports</div>
+                    </div>
+                </div>
+            </div>
+
+            <h2>Analytics Deliverables</h2>
+            <ul>
+                <li><strong>Executive Dashboards</strong> — Interactive, real-time visualization of key metrics accessible from any device</li>
+                <li><strong>Predictive Maintenance Reports</strong> — AI-generated insights identifying assets at risk of failure with recommended actions</li>
+                <li><strong>Change Detection Analysis</strong> — Automated comparison of multi-temporal data showing what changed, where, and by how much</li>
+                <li><strong>Compliance Documentation</strong> — Regulatory-ready reports with audit trails, certifications, and standardized formats</li>
+                <li><strong>ROI Analysis</strong> — Quantified business impact showing cost savings, risk reduction, and efficiency gains</li>
+                <li><strong>Custom Analytics</strong> — Tailored analysis specific to your industry, assets, and business objectives</li>
+                <li><strong>API Integration</strong> — Direct data feeds into your existing CMMS, ERP, or asset management systems</li>
+            </ul>
+
+            <h2>The Intelligence Advantage</h2>
+            <p style="font-size: 1.15rem; line-height: 1.9;">Data is only valuable if it drives decisions. Our analytics services transform your raw drone captures into <strong>actionable intelligence</strong> — enabling predictive maintenance, optimizing capital allocation, demonstrating regulatory compliance, and proving ROI to stakeholders.</p>
+            <p style="font-size: 1.15rem; line-height: 1.9; margin-top: 1.5rem; padding: 2rem; background: rgba(0, 191, 255, 0.05); border-left: 4px solid #00bfff; border-radius: 8px;"><strong style="color: #87CEEB;">Don't just collect data — leverage it.</strong> Our analytics turn your aerial intelligence into competitive advantage, helping you make faster, smarter, data-driven decisions that improve safety, reduce costs, and extend asset life.</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Unlock Your Data's Potential?</h2>
+            <p>Stop drowning in data. Start making decisions with confidence. Let us transform your raw captures into actionable intelligence.</p>
+            <a href="contact.html" class="btn-primary">Request Analytics Demo <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i></a>
+            <a href="portfolio.html" class="btn-secondary">View Analytics Projects</a>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h3>VELO<span>DRONES</span></h3><p>Premium aerial intelligence and geospatial solutions helping organizations operate more efficiently, safely, and profitably.</p></div>
+                <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="index.html#services">Our Services</a></li><li><a href="about.html">About Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+                <div class="footer-col"><h4>Contact Info</h4><ul class="contact-info"><li><i class="fas fa-envelope"></i><a href="mailto:velodronesag@gmail.com">velodronesag@gmail.com</a></li><li><i class="fas fa-phone"></i><a href="tel:+254115874187">+254 115 874 187</a></li><li><i class="fas fa-map-marker-alt"></i><span>Nairobi, Kenya</span></li></ul></div>
+            </div>
+            <div class="footer-bottom"><p>&copy; 2026 Velodrones. All Rights Reserved.</p></div>
+        </div>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+</html>
