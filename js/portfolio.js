@@ -2,7 +2,7 @@
 
 // Sanity.io Configuration
 const SANITY_CONFIG = {
-    projectId: 'YOUR_PROJECT_ID', // Replace with your Sanity project ID
+    projectId: '6utlniqd', // Replace with your Sanity project ID
     dataset: 'production',
     apiVersion: '2024-01-01',
     useCdn: false

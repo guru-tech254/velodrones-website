@@ -4,7 +4,5 @@ export default {
   name: 'velodrones-portfolio',
   title: 'Velodrones Portfolio',
   basePath: '/studio',
-  schema: {
-    types: [project]
-  }
+  types: [project]
 }
