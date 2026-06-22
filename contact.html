@@ -104,7 +104,7 @@
                     </div>
 
                     <!-- Formspree Form -->
-                    <form id="contactForm" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+                    <form id="contactForm" action="https://formspree.io/f/mdarowze" method="POST">
                         <div class="form-group">
                             <label for="name">Full Name *</label>
                             <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -242,5 +242,26 @@
             }
         });
     </script>
+
+    <script>
+// Formspree success message handling
+const form = document.querySelector('form');
+const successMessage = document.getElementById('form-success');
+
+if (form) {
+    form.addEventListener('submit', function(e) {
+        // Show success message after form submits
+        setTimeout(() => {
+            if (successMessage) {
+                successMessage.style.display = 'block';
+                form.reset();
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                }, 5000);
+            }
+        }, 1000);
+    });
+}
+</script>
 </body>
 </html>
