@@ -2219,16 +2219,17 @@ body.about-page .section {
     text-align: center;
     padding: 2rem 1rem 1rem;
     margin-top: 2rem;
-    border-top: 1px solid rgba(0, 191, 255, 0.2);
+    border-top: 1px solid rgba(1, 42, 56, 0.2);
 }
 
 .cert-badge-mini img {
     max-width: 140px;
     height: auto;
-    filter: brightness(0) invert(1); /* Makes logo white for dark theme */
-    opacity: 0.85;
+    /* REMOVED: filter: brightness(0) invert(1); */
     display: block;
     margin: 0 auto 0.8rem;
+    /* Optional: Add a subtle drop shadow so it pops against dark bg */
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
 }
 
 .cert-badge-mini p {
