@@ -2186,3 +2186,28 @@ body.about-page .section {
         display: none; /* Hide tooltip on mobile */
     }
 }
+
+
+.cert-badge-mini {
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(0, 29, 61, 0.4);
+    border-top: 1px solid rgba(0, 191, 255, 0.2);
+    margin-top: 2rem;
+}
+
+.cert-badge-mini img {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    margin-bottom: 0.5rem;
+}
+
+.cert-badge-mini p {
+    color: #00d484;
+    font-size: 0.85rem;
+    margin: 0.5rem 0 0;
+}
+
+.cert-badge-mini i {
+    margin-right: 0.3rem;
+}
