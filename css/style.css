@@ -2296,3 +2296,117 @@ body.about-page .section {
         height: 55px;
     }
 }
+
+
+
+
+/* --- GLOBAL PREMIUM HEADER STYLES --- */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 90px;
+    
+    /* The Signature Gradient */
+    background: linear-gradient(90deg, 
+        #000814 0%,      /* Deep black left */
+        #001d3d 40%,     /* Navy middle */
+        #003566 70%,     /* Blue right */
+        #00bfff 100%     /* Sky blue edge */
+    );
+    
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0, 191, 255, 0.2);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%;
+    padding: 0 5%;
+}
+
+/* Seamless Logo Blending */
+.logo {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background: transparent !important;
+    border: none !important;
+}
+
+.header-logo {
+    height: 70px;
+    width: auto;
+    display: block;
+    
+    /* Makes black background transparent */
+    mix-blend-mode: screen; 
+    background: transparent !important;
+    object-fit: contain;
+    
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+}
+
+/* Navigation Links */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #00bfff;
+}
+
+/* White Contact Button */
+.nav-links .btn-primary {
+    background: #ffffff;
+    color: #000000;
+    padding: 0.8rem 2rem;
+    border-radius: 6px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: 2px solid #ffffff;
+    transition: all 0.3s ease;
+    margin-left: 1rem;
+}
+
+.nav-links .btn-primary:hover {
+    background: transparent;
+    color: #ffffff;
+    border-color: #00bfff;
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4);
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+    .header { height: 70px; }
+    .header-logo { height: 50px; }
+    .nav-links { display: none; } /* Handled by JS toggle */
+}
