@@ -2246,3 +2246,53 @@ body.about-page .section {
 .cert-badge-mini i {
     font-size: 0.9rem;
 }
+
+
+
+
+/* Fixed Header Height */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    height: 100px; /* FIXED height - header never changes */
+}
+
+/* Navbar fills the fixed header */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    height: 100%; /* Fills the 75px header exactly */
+    padding: 0 5%; /* ZERO top/bottom padding */
+}
+
+/* Bigger Logo Without Increasing Header */
+.header-logo {
+    height: 180px; /* Almost fills the entire 75px header */
+    width: auto;
+    display: block;
+    object-fit: contain;
+    mix-blend-mode: screen;
+    background: transparent !important;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .header {
+        height: 65px;
+    }
+    .header-logo {
+        height: 55px;
+    }
+}
