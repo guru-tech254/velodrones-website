@@ -2413,44 +2413,45 @@ body.about-page .section {
 
 
 
-/* === MOBILE NAVIGATION FIX === */
+/* === MOBILE NAVIGATION FIX (Works with existing JS) === */
 
-/* Base state for nav-links on mobile - HIDDEN by default */
 @media (max-width: 768px) {
+    /* 
+       CRITICAL FIX: 
+       We use display:none by default so it's hidden.
+       When your JS adds .active, we switch to display:flex 
+       and change direction to column.
+    */
     .nav-links {
+        display: none !important; /* Hidden by default on mobile */
+        
         position: fixed;
-        top: 90px; /* Below header */
+        top: 90px; /* Push down below header */
         left: 0;
         width: 100%;
         height: calc(100vh - 90px);
-        background: linear-gradient(180deg, 
-            rgba(0, 8, 20, 0.98) 0%, 
-            rgba(0, 29, 61, 0.98) 100%);
+        background: rgba(0, 8, 20, 0.98); /* Solid dark bg */
+        backdrop-filter: blur(15px);
+        z-index: 999;
         
-        /* Stack links vertically */
+        /* Stack items vertically when shown */
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 3rem;
-        gap: 1.5rem;
+        padding-top: 4rem;
+        gap: 2rem;
         
-        /* Hidden off-screen by default */
-        transform: translateX(-100%);
-        transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        
-        z-index: 999;
-        backdrop-filter: blur(20px);
-        box-shadow: 5px 0 30px rgba(0, 0, 0, 0.5);
         margin: 0;
+        padding-left: 0; /* Remove default ul padding */
         list-style: none;
     }
-    
-    /* When active class is added by JS, slide in */
+
+    /* This class is added by YOUR existing JavaScript */
     .nav-links.active {
-        transform: translateX(0);
+        display: flex !important; /* Show only when active */
     }
-    
-    /* Style each link in mobile menu */
+
+    /* Style links for mobile touch targets */
     .nav-links li {
         width: 100%;
         text-align: center;
@@ -2458,90 +2459,82 @@ body.about-page .section {
         transform: translateY(20px);
         transition: all 0.3s ease;
     }
-    
+
+    /* Staggered fade-in animation */
     .nav-links.active li {
         opacity: 1;
         transform: translateY(0);
     }
-    
-    /* Stagger animation */
     .nav-links.active li:nth-child(1) { transition-delay: 0.1s; }
     .nav-links.active li:nth-child(2) { transition-delay: 0.15s; }
     .nav-links.active li:nth-child(3) { transition-delay: 0.2s; }
     .nav-links.active li:nth-child(4) { transition-delay: 0.25s; }
     .nav-links.active li:nth-child(5) { transition-delay: 0.3s; }
     .nav-links.active li:nth-child(6) { transition-delay: 0.35s; }
-    
+
     .nav-links a {
-        font-size: 1.3rem !important;
-        font-weight: 600 !important;
+        font-size: 1.4rem !important;
         color: #ffffff !important;
         padding: 1rem 2rem !important;
         display: block;
-        width: 80%;
-        margin: 0 auto;
-        border-radius: 8px;
+        width: 100%;
     }
-    
+
     .nav-links a:hover {
-        background: rgba(0, 191, 255, 0.1);
         color: #00bfff !important;
+        background: rgba(0, 191, 255, 0.05);
     }
-    
-    /* Style the CONTACT button in mobile */
+
+    /* Fix Contact Button on Mobile */
     .nav-links .btn-primary {
         background: #ffffff !important;
         color: #000000 !important;
-        padding: 1rem 3rem !important;
         margin-top: 1rem;
         width: auto !important;
         display: inline-block !important;
-        border-radius: 6px !important;
-        font-weight: 800 !important;
+        border-radius: 6px;
     }
-    
-    /* Show hamburger on mobile */
+
+    /* Hamburger Icon Styling */
     .hamburger {
         display: flex !important;
         cursor: pointer;
         z-index: 1001;
         padding: 0.5rem;
     }
-    
+
     .hamburger i {
         font-size: 1.8rem;
         color: #ffffff;
         transition: transform 0.3s ease;
     }
-    
+
+    /* Rotate icon when active (handled by your JS toggling classes) */
     .hamburger.active i {
         transform: rotate(90deg);
     }
 }
 
-/* Hide hamburger on desktop */
+/* Desktop Reset */
 @media (min-width: 769px) {
     .hamburger {
         display: none !important;
     }
     
-    /* Desktop nav-links stays horizontal */
     .nav-links {
         display: flex !important;
-        flex-direction: row !important;
-        position: static !important;
-        transform: none !important;
-        height: auto !important;
-        background: transparent !important;
-        backdrop-filter: none !important;
-        box-shadow: none !important;
-        width: auto !important;
-        padding: 0 !important;
+        position: static;
+        height: auto;
+        width: auto;
+        background: transparent;
+        flex-direction: row;
+        padding-top: 0;
+        gap: 2rem;
     }
     
     .nav-links li {
         opacity: 1 !important;
         transform: none !important;
-        width: auto !important;
+        width: auto;
     }
 }
